@@ -24,5 +24,8 @@ const path = require('path');
 mix.webpackConfig({
   devServer: {
     contentBase: path.resolve(__dirname, 'public'),
+    historyApiFallback: true,
+    contentBase: './',
+    hot: true
   }
 });

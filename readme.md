@@ -1,5 +1,3 @@
-***https://medium.com/@sadnub/api-auth-and-graphql-in-laravel-d191e277560d*** 
-
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 <p align="center">

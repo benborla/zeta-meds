@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { logout, isLogin } from '../utils';
 import { Link } from 'react-router-dom';
+import { publicRoutes } from '../routes/PublicRoutes'
 
 class Home extends Component {
 
@@ -26,7 +27,7 @@ class Home extends Component {
 
                 {this.state.isLogin ?
                     <button onClick={() => this.handleLogout()}>Click here to log out</button>
-                    : <Link to="/register">Register</Link>
+                    : <Link to={publicRoutes.register}>Register</Link>
                 }
             </div>
         );

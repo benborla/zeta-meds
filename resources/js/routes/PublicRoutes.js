@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import { isLogin } from '../utils';
 
-const PublicRoute = ({component: Component, restricted, ...rest}) => {
+export const PublicRoute = ({component: Component, restricted, ...rest}) => {
     return (
         // restricted = false meaning public route
         // restricted = true meaning restricted route
@@ -14,4 +14,7 @@ const PublicRoute = ({component: Component, restricted, ...rest}) => {
     );
 };
 
-export default PublicRoute;
+export const publicRoutes = {
+    home: '/',
+    register: '/register'
+}

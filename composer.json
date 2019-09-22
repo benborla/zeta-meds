@@ -89,6 +89,9 @@
         "app-db-update": [
             "bin/console doctrine:database:create --if-not-exists",
             "bin/console d:m:m"
+        ],
+        "app-cache-clear": [
+            "php -d memory_limit=-1 bin/console cache:clear"
         ]
     },
     "config": {

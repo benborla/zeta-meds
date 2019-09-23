@@ -21,7 +21,8 @@
         "mollie/polyfill-libsodium": "^1.1",
         "sylius/sylius": "~1.6.0",
         "symfony/dotenv": "^4.3",
-        "symfony/flex": "^1.2"
+        "symfony/flex": "^1.2",
+        "symfony/webpack-encore-bundle": "^1.6"
     },
     "require-dev": {
         "behat/behat": "^3.4",

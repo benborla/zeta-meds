@@ -3,7 +3,8 @@ webpack_encore:
     # This should match Encore.setOutputPath() in webpack.config.js.
     output_path: '%kernel.project_dir%/public/build'
     builds:
-        bootstrapTheme: '%kernel.project_dir%/public/bootstrap-theme'
+        # bootstrapTheme: '%kernel.project_dir%/public/bootstrap-theme'
+        zetaMedsTheme: '%kernel.project_dir%/public/zetameds-theme'
     # If multiple builds are defined (as shown below), you can disable the default build:
     # output_path: false
 

@@ -1,0 +1,12 @@
+{
+  "entrypoints": {
+    "app": {
+      "css": [
+        "/zetameds-theme/app.css"
+      ],
+      "js": [
+        "/zetameds-theme/app.js"
+      ]
+    }
+  }
+}

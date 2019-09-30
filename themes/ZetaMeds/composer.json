@@ -1,0 +1,16 @@
+{
+    "name": "benborla/zeta-meds",
+    "description": "Zeta Meds Template",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ben Borla",
+            "email": "benborla@icloud.com"
+        }
+    ],
+    "extra": {
+        "sylius-theme": {
+            "title": "Zeta Meds Template"
+        }
+    }
+}

@@ -26,8 +26,9 @@ body, button, input, select, textarea {
     padding-top: 15px;
 }
 
-
-@media screen and (min-width: 1200px)
-.container {
-    width: 1170px;
+.img {
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+    border: 0;
 }

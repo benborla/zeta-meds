@@ -25,6 +25,14 @@
         {{ sonata_block_render_event('sylius.shop.layout.before_body') }}
 
         {% include '@SyliusShop/_header.html.twig' %}
+
+        {% include '@SyliusShop/_footer.html.twig' %}
     </div>
+
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app', null, 'zetaMedsTheme') }}
+
+        {{ sonata_block_render_event('sylius.shop.layout.javascripts') }}
+    {% endblock %}
 </body>
 </html>

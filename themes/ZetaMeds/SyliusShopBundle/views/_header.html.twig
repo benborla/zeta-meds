@@ -1,52 +1,27 @@
-<header class="site-header" role="banner">
-    <div class="site-branding container">
-        <div class="row">
-            <div class="col-sm-4 header-logo">
-                <a href="{{ path('sylius_shop_homepage') }}" class="custom-logo-link" rel="home">
-                    <img width="165" height="70" src="{{ asset('zetameds-theme/images/zetameds-white-logo.png', 'zetaMedsTheme')}}" class="custom-logo" alt="Zeta Meds">
-                </a>
-            </div>
-            <div class="col-sm-8 header-banner">
-                <a href="{{ path('sylius_shop_homepage') }}">
-                    <img src="{{ asset('zetameds-theme/images/headerflag.jpg', 'zetaMedsTheme')}}" class="custom-logo img-responsive" alt="Zeta Meds">
-                </a>
-            </div>
+<div class="row align-items-center no-gutters">
+    <div class="col">
+        <a href="{{ path('sylius_shop_homepage') }}"><img class="logo" src="{{ asset('zetameds-theme/images/sylius-logo.png', 'zetaMedsTheme') }}" alt="Sylius logo" /></a>
+    </div>
+    <div class="col-auto">
+        {{ sonata_block_render_event('sylius.shop.layout.header') }}
+    </div>
+    <div class="col-auto d-flex align-items-center">
+        <div class="d-none d-md-block text-right">
+            {{ sonata_block_render_event('sylius.shop.layout.before_security_widget') }}
+
+            {{ render(controller('sylius.controller.shop.security_widget:renderAction')) }}
+
+            {{ sonata_block_render_event('sylius.shop.layout.after_security_widget') }}
+        </div>
+        <div class="ml-4">
+            {{ render(url('sylius_shop_partial_cart_summary', {'template': '@SyliusShop/Cart/_widget.html.twig'})) }}
         </div>
     </div>
-
-    <nav id="site-navigation" class="main-navigation navbar navbar-expand-lg" role="navigation">
-        <div class="container">
-            <div class="row">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown link
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </li>
-                </ul>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
+    <div class="col-auto d-lg-none">
+        <div class="navbar-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
         </div>
-    </nav>
-</header>
-
+    </div>
+</div>

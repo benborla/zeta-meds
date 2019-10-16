@@ -5,5 +5,7 @@ import './js/index';
 import './scss/index.scss';
 
 // Images
-import './img/zetameds-white-logo.png';
-import './img/headerflag.jpg';
+import './media/sylius-logo.png';
+
+// Font awesome icons
+import './js/fontawesome';

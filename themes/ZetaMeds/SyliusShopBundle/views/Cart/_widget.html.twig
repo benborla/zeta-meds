@@ -4,10 +4,10 @@
 {{ sonata_block_render_event('sylius.shop.partial.cart.summary.before_widget_content', {'cart': cart}) }}
 
 <div class="btn-group">
-    <a class="btn btn-light d-flex align-items-center dropdown-toggle" data-toggle="dropdown" href="#">
+    <a class="btn btn-orange d-flex align-items-center dropdown-toggle" data-toggle="dropdown" href="#">
         <span class="pr-3">{{ money.convertAndFormat(cart.itemsTotal) }}</span>
-        <span>{{ icons.cart('h1 m-0') }}</span>
-        <span class="badge badge-pill badge-primary" style="transform: translate(-8px, 10px)">{{ cart.items|length }}</span>
+        <span class="cart-icon">{{ icons.cart('h1 m-0') }}</span>
+        <span class="badge badge-pill badge-success" style="transform: translate(-8px, 10px)">{{ cart.items|length }}</span>
     </a>
 
     <div class="dropdown-menu dropdown-menu-right" style="width:300px">

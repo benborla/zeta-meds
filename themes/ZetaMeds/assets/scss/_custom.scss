@@ -1,10 +1,76 @@
+body {
+    background: $white;
+}
+
+a {
+    color: $orange;
+    &:hover {
+        color: $white;
+    }
+}
+
+.main-header {
+    background: $background;
+    margin-top: -25px;
+
+    .header-children {
+        padding-top: 15px;
+    }
+}
+
+.main-navigation {
+    background: $orange;
+}
+
+.nav-item {
+    .dropdown {
+        .show {
+            color: $orange;
+        }
+    }
+}
+
+.navbar-toggler-icon {
+    background-color: $orange;
+}
+
 .navbar a.nav-link {
     text-transform: uppercase;
-    color: $headings-color;
+    color: $white;
     font-weight: 500;
 
     &:hover {
-        color: $primary;
+        color: $background;
+    }
+}
+
+.btn-orange {
+    background: $orange;
+    color: $white;
+
+    &:hover {
+        color: $light-orange;
+    }
+}
+
+.btn-link {
+    color: $orange;
+}
+
+.btn-primary {
+    background: $orange;
+    border-color: $light-orange;
+
+    &:hover {
+        background: $light-orange;
+        border-color: $orange;
+        text-decoration: none;
+    }
+
+    &:active {
+        background: $background !important;
+        border: 1px solid $orange !important;
+        box-shadow: 0 0 0 0.2rem $orange;
     }
 }
 
@@ -18,8 +84,19 @@
     }
 }
 
-.main-content > :first-child:not(nav):not(.nav) {
-    margin-top: map-get($spacers, 4);
+.main-content {
+    padding-top: 15px;
+    background: $white;
+
+    & > :first-child:not(nav):not(.nav) {
+        margin-top: map-get($spacers, 4);
+    }
+
+    a {
+        &:hover {
+            color: $background;
+        }
+    }
 }
 
 
@@ -53,3 +130,21 @@ label.required {
     padding-left: 5px;
     //font-size: $font-size-lg;
 }
+
+.main-footer {
+    background: $background;
+
+    h4 {
+        color: $white;
+    }
+}
+
+@media
+only screen and (min-width: 1024px) {
+    .main-footer {
+        // position: absolute;
+        // width: 100%;
+        // bottom: 0;
+    }
+}
+

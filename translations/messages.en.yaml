@@ -1,0 +1,8 @@
+sylius:
+    form:
+        customer:
+            email: Username123
+
+bitbag_sylius_cms:
+    ui:
+        cms: CMS

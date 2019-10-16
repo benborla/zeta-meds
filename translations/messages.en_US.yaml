@@ -1,7 +1,23 @@
+app:
+    title: Zeta Meds
+
+Error: Error
+error: Error
 sylius:
+    ui: 
+        register_in_the_store: Create an Account
     form:
+        user: 
+            password:
+                confirmation: Confirm Password
+        login:
+            username: Email
         customer:
-            email: Username123
+            email: Email
+            first: test
+            plainPassword:
+                first: test
+            verification: Confirm Password
 
 bitbag_sylius_cms:
     ui:

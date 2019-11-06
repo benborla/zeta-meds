@@ -1,4 +1,4 @@
 var Encore = require('@symfony/webpack-encore');
-const bootstrapTheme = require('./themes/ZetaMeds/webpack.config');
-module.exports = [bootstrapTheme];
+const zetaMedsTheme = require('./themes/ZetaMedsTheme/webpack.config');
+module.exports = [zetaMedsTheme];
 

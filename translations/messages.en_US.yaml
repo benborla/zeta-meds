@@ -8,6 +8,7 @@ sylius:
         register_in_the_store: Create an Account
         taxons: Categories
         new_taxon: New Category
+        manage_taxons: Manage Categories
     menu:
         admin:
             main:

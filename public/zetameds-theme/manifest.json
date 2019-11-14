@@ -1,6 +1,11 @@
 {
-  "zetameds-theme/app.css": "/zetameds-theme/app.css",
   "zetameds-theme/app.js": "/zetameds-theme/app.js",
+  "zetameds-theme/fonts/Flaticon.ttf": "/zetameds-theme/fonts/Flaticon.589a45a4.ttf",
+  "zetameds-theme/fonts/Flaticon.eot": "/zetameds-theme/fonts/Flaticon.e0050ee6.eot",
+  "zetameds-theme/fonts/Flaticon.woff": "/zetameds-theme/fonts/Flaticon.ff2f61d5.woff",
+  "zetameds-theme/images/Flaticon.svg": "/zetameds-theme/images/Flaticon.36c1845f.svg",
+  "zetameds-theme/images/arrow-down.png": "/zetameds-theme/images/arrow-down.dd674533.png",
+  "zetameds-theme/images/arrow-up.png": "/zetameds-theme/images/arrow-up.3714eff8.png",
   "zetameds-theme/images/flags.png": "/zetameds-theme/images/flags.9c74e172.png",
   "zetameds-theme/images/sylius-logo.png": "/zetameds-theme/images/sylius-logo.ac4ac094.png"
 }

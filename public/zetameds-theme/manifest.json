@@ -1,4 +1,5 @@
 {
+  "zetameds-theme/app.css": "/zetameds-theme/app.css",
   "zetameds-theme/app.js": "/zetameds-theme/app.js",
   "zetameds-theme/fonts/Flaticon.ttf": "/zetameds-theme/fonts/Flaticon.589a45a4.ttf",
   "zetameds-theme/fonts/Flaticon.eot": "/zetameds-theme/fonts/Flaticon.e0050ee6.eot",
@@ -7,5 +8,12 @@
   "zetameds-theme/images/arrow-down.png": "/zetameds-theme/images/arrow-down.dd674533.png",
   "zetameds-theme/images/arrow-up.png": "/zetameds-theme/images/arrow-up.3714eff8.png",
   "zetameds-theme/images/flags.png": "/zetameds-theme/images/flags.9c74e172.png",
-  "zetameds-theme/images/sylius-logo.png": "/zetameds-theme/images/sylius-logo.ac4ac094.png"
+  "zetameds-theme/images/owl.video.play.png": "/zetameds-theme/images/owl.video.play.4a37f800.png",
+  "zetameds-theme/images/sylius-logo.png": "/zetameds-theme/images/sylius-logo.ac4ac094.png",
+  "zetameds-theme/images/ui-icons_444444_256x240.png": "/zetameds-theme/images/ui-icons_444444_256x240.d10bc070.png",
+  "zetameds-theme/images/ui-icons_555555_256x240.png": "/zetameds-theme/images/ui-icons_555555_256x240.00dd0ec0.png",
+  "zetameds-theme/images/ui-icons_777620_256x240.png": "/zetameds-theme/images/ui-icons_777620_256x240.4e7e3e14.png",
+  "zetameds-theme/images/ui-icons_777777_256x240.png": "/zetameds-theme/images/ui-icons_777777_256x240.40bf2579.png",
+  "zetameds-theme/images/ui-icons_cc0000_256x240.png": "/zetameds-theme/images/ui-icons_cc0000_256x240.093a8191.png",
+  "zetameds-theme/images/ui-icons_ffffff_256x240.png": "/zetameds-theme/images/ui-icons_ffffff_256x240.ea4ebe07.png"
 }

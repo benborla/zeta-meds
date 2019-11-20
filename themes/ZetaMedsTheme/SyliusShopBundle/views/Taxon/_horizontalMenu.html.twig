@@ -28,7 +28,7 @@
                     {{ macros.item(taxon) }}
                 {% endfor %}
             </div>
-            <div class="d-md-none py-3 border-top">
+            <div class="mobile-view d-md-none py-3 border-top">
                 {{ sonata_block_render_event('sylius.shop.layout.before_security_widget') }}
 
                 {{ render(controller('sylius.controller.shop.security_widget:renderAction')) }}

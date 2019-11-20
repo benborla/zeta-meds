@@ -12,6 +12,7 @@ import './js/fontawesome';
 
 // images
 import './img/logo.png';
+import './media/favicon.ico';
 import './img/icons/1.png';
 import './img/icons/2.png';
 import './img/icons/3.png';
@@ -36,3 +37,7 @@ import './img/bg-2.jpg';
 import './img/banner-bg.jpg';
 import './img/blog-thumbs/1.jpg';
 import './img/blog-thumbs/2.jpg';
+
+import './img/pencil-square-o.png';
+import './img/credit-card.png';
+import './img/home.png';

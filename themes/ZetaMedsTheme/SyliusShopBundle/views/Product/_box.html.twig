@@ -2,17 +2,16 @@
 
 {{ sonata_block_render_event('sylius.shop.product.index.before_box', {'product': product}) }}
 
-<div class="card border-0">
+<div class="pi-pic">
     <a href="{{ path('sylius_shop_product_show', {'slug': product.slug, '_locale': product.translation.locale}) }}">
         {% include '@SyliusShop/Product/_mainImage.html.twig' with {'product': product, 'class': 'card-img-top'} %}
     </a>
-    <div class="card-body text-center">
-        <h6>{{ product.name }}</h6>
+
+    <div class="pi-text">
         {% if not product.variants.empty() %}
-            <span class="text-muted">{{ money.calculatePrice(product|sylius_resolve_variant) }} |</span>
+            <h6>{{ money.calculatePrice(product|sylius_resolve_variant) }}</h6>
         {% endif %}
+        <p>{{ product.name }}</p>
         <a href="{{ path('sylius_shop_product_show', {'slug': product.slug, '_locale': product.translation.locale}) }}" class="card-link">{{ 'sylius.ui.view_more'|trans }}</a>
     </div>
 </div>
-
-{{ sonata_block_render_event('sylius.shop.product.index.after_box', {'product': product}) }}

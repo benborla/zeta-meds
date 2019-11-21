@@ -60,9 +60,6 @@ return [
     Sylius\Behat\Application\SyliusTestPlugin\SyliusTestPlugin::class => ['test' => true, 'test_cached' => true],
     Symfony\Bundle\WebServerBundle\WebServerBundle::class => ['dev' => true],
     Symfony\WebpackEncoreBundle\WebpackEncoreBundle::class => ['all' => true],
-    SitemapPlugin\SitemapPlugin::class => ['all' => true],
     Knp\Bundle\SnappyBundle\KnpSnappyBundle::class => ['all' => true],
     Sylius\InvoicingPlugin\SyliusInvoicingPlugin::class => ['all' => true],
-    Odiseo\SyliusReportPlugin\OdiseoSyliusReportPlugin::class => ['all' => true],
-    Sylius\Bundle\ResourceBundle\SyliusResourceBundle::class => ['all' => true],
 ];

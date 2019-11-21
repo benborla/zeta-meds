@@ -95,6 +95,9 @@
         ],
         "app-cache-clear": [
             "php -d memory_limit=-1 bin/console cache:clear"
+        ],
+        "generate-invoices": [
+            "php bin/console sylius-invoicing:generate-invoices"
         ]
     },
     "config": {

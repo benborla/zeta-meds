@@ -8,7 +8,9 @@
             {% if ancestor.isRoot() %}
                 <li class="breadcrumb-item">{{ ancestor.name }}</li>
             {% else %}
-                <li class="breadcrumb-item"><a href="{{ path('sylius_shop_product_index', {'slug': ancestor.slug, '_locale': ancestor.translation.locale}) }}">{{ ancestor.name }}</a></li>
+                {% if ancestor.name != 'Category' %}
+                    <li class="breadcrumb-item"><a href="{{ path('sylius_shop_product_index', {'slug': ancestor.slug, '_locale': ancestor.translation.locale}) }}">{{ ancestor.name }}</a></li>
+                {% endif %}
             {% endif %}
         {% endfor %}
 

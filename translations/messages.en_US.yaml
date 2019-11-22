@@ -9,6 +9,8 @@ sylius:
         taxons: Categories
         new_taxon: New Category
         manage_taxons: Manage Categories
+        latest_products: Our Latest Products
+
     menu:
         admin:
             main:

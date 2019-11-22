@@ -20,6 +20,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons/faSearch';
 import { faPlus } from '@fortawesome/free-solid-svg-icons/faPlus';
 import { faPencilAlt } from '@fortawesome/free-solid-svg-icons/faPencilAlt';
 import { faSyncAlt } from '@fortawesome/free-solid-svg-icons/faSyncAlt';
+import { faEdit } from '@fortawesome/free-solid-svg-icons/faEdit';
 
 library.add(
   faStar,
@@ -40,5 +41,6 @@ library.add(
   faPlus,
   faPencilAlt,
   faSyncAlt,
+  faEdit,
 );
 dom.watch();

@@ -41,6 +41,7 @@ import './img/blog-thumbs/2.jpg';
 import './img/pencil-square-o.png';
 import './img/credit-card.png';
 import './img/home.png';
+import './img/clock.png';
 
 import './img/sliders/slider-1.png';
 import './img/sliders/slider-2.png';

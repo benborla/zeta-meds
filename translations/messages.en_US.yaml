@@ -10,13 +10,21 @@ sylius:
         new_taxon: New Category
         manage_taxons: Manage Categories
         latest_products: Our Latest Products
+        edit_channel: Edit Stores
+        configure_channels_available_in_your_store: Configure available stores
+        channels: Stores
+        new_channel: New Store
 
     menu:
         admin:
             main:
                 catalog:
                     taxons: Categories
+                configuration:
+                    channels: Stores
     form:
+        product:
+            channels: Store
         user: 
             password:
                 confirmation: Confirm Password

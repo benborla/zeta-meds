@@ -26,6 +26,9 @@
     "behat/transliterator": {
         "version": "v1.2.0"
     },
+    "brille24/sylius-tierprice-plugin": {
+        "version": "v1.6"
+    },
     "clue/stream-filter": {
         "version": "v1.4.0"
     },

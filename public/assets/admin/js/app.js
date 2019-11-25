@@ -42261,7 +42261,7 @@
 	  addTabErrors: function addTabErrors() {
 	    var element = this;
 
-	    jquery('.ui.segment > .ui.tab').each(function (idx, el) {
+	    jquery('.ui.tab').each(function (idx, el) {
 	      var errors = jquery(el).find('.sylius-validation-error');
 
 	      if (errors.length !== 0) {

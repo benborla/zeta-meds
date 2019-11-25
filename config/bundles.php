@@ -62,4 +62,5 @@ return [
     Symfony\WebpackEncoreBundle\WebpackEncoreBundle::class => ['all' => true],
     Knp\Bundle\SnappyBundle\KnpSnappyBundle::class => ['all' => true],
     Sylius\InvoicingPlugin\SyliusInvoicingPlugin::class => ['all' => true],
+    Brille24\SyliusTierPricePlugin\Brille24SyliusTierPricePlugin::class => ['all' => true],
 ];

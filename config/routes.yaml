@@ -1,0 +1,2 @@
+brille24_tierprice_bundle:
+    resource: '@Brille24SyliusTierPricePlugin/Resources/config/routing.yml'

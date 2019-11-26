@@ -99,6 +99,9 @@
         ],
         "generate-invoices": [
             "php bin/console sylius-invoicing:generate-invoices"
+        ],
+        "install-bundle-assets": [
+            "php bin/console sylius:theme:assets:install"
         ]
     },
     "config": {

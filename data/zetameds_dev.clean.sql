@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 27, 2019 at 09:21 AM
+-- Generation Time: Nov 27, 2019 at 10:29 AM
 -- Server version: 5.7.28
 -- PHP Version: 7.3.12
 
@@ -36,6 +36,22 @@ CREATE TABLE `brille24_tierprice` (
   `product_variant_id` int(11) DEFAULT NULL,
   `customer_group_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `brille24_tierprice`
+--
+
+INSERT INTO `brille24_tierprice` (`id`, `price`, `qty`, `channel_id`, `product_variant_id`, `customer_group_id`) VALUES
+(2, 242, 31, 1, 2, NULL),
+(3, 290, 29, 1, 3, NULL),
+(4, 393, 9, 1, 4, NULL),
+(5, 226, 13, 1, 4, NULL),
+(6, 245, 13, 1, 5, NULL),
+(7, 235, 17, 1, 5, NULL),
+(8, 230, 21, 1, 5, NULL),
+(9, 215, 25, 1, 5, NULL),
+(10, 210, 37, 1, 5, NULL),
+(11, 205, 41, 1, 5, NULL);
 
 -- --------------------------------------------------------
 
@@ -134,6 +150,13 @@ CREATE TABLE `sylius_adjustment` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `sylius_adjustment`
+--
+
+INSERT INTO `sylius_adjustment` (`id`, `order_id`, `order_item_id`, `order_item_unit_id`, `type`, `label`, `amount`, `is_neutral`, `is_locked`, `origin_code`, `created_at`, `updated_at`) VALUES
+(2, 1, NULL, NULL, 'shipping', 'USPS (Free Shipping)', 0, 0, 0, NULL, '2019-11-27 10:26:39', '2019-11-27 10:26:39');
 
 -- --------------------------------------------------------
 
@@ -346,6 +369,16 @@ CREATE TABLE `sylius_channel_pricing` (
   `original_price` int(11) DEFAULT NULL,
   `channel_code` varchar(255) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `sylius_channel_pricing`
+--
+
+INSERT INTO `sylius_channel_pricing` (`id`, `product_variant_id`, `price`, `original_price`, `channel_code`) VALUES
+(2, 2, 320, 320, 'ZETA_MEDS'),
+(3, 3, 311, 311, 'ZETA_MEDS'),
+(4, 4, 395, 395, 'ZETA_MEDS'),
+(5, 5, 379, 379, 'ZETA_MEDS');
 
 -- --------------------------------------------------------
 
@@ -596,6 +629,13 @@ CREATE TABLE `sylius_order` (
   `customer_ip` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Dumping data for table `sylius_order`
+--
+
+INSERT INTO `sylius_order` (`id`, `shipping_address_id`, `billing_address_id`, `channel_id`, `promotion_coupon_id`, `customer_id`, `number`, `notes`, `state`, `checkout_completed_at`, `items_total`, `adjustments_total`, `total`, `created_at`, `updated_at`, `currency_code`, `locale_code`, `checkout_state`, `payment_state`, `shipping_state`, `token_value`, `customer_ip`) VALUES
+(1, NULL, NULL, 1, NULL, NULL, NULL, NULL, 'cart', NULL, 13310, 0, 13310, '2019-11-27 10:26:26', '2019-11-27 10:26:39', 'USD', 'en_US', 'cart', 'cart', 'cart', NULL, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -616,6 +656,13 @@ CREATE TABLE `sylius_order_item` (
   `variant_name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Dumping data for table `sylius_order_item`
+--
+
+INSERT INTO `sylius_order_item` (`id`, `order_id`, `variant_id`, `quantity`, `unit_price`, `units_total`, `adjustments_total`, `total`, `is_immutable`, `product_name`, `variant_name`) VALUES
+(1, 1, 2, 55, 242, 13310, 0, 13310, 0, NULL, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -630,6 +677,67 @@ CREATE TABLE `sylius_order_item_unit` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `sylius_order_item_unit`
+--
+
+INSERT INTO `sylius_order_item_unit` (`id`, `order_item_id`, `shipment_id`, `adjustments_total`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, 0, '2019-11-27 10:26:26', '2019-11-27 10:26:26'),
+(2, 1, 1, 0, '2019-11-27 10:26:39', '2019-11-27 10:26:39'),
+(3, 1, 1, 0, '2019-11-27 10:26:39', '2019-11-27 10:26:39'),
+(4, 1, 1, 0, '2019-11-27 10:26:39', '2019-11-27 10:26:39'),
+(5, 1, 1, 0, '2019-11-27 10:26:39', '2019-11-27 10:26:39'),
+(6, 1, 1, 0, '2019-11-27 10:26:39', '2019-11-27 10:26:39'),
+(7, 1, 1, 0, '2019-11-27 10:26:39', '2019-11-27 10:26:39'),
+(8, 1, 1, 0, '2019-11-27 10:26:39', '2019-11-27 10:26:39'),
+(9, 1, 1, 0, '2019-11-27 10:26:39', '2019-11-27 10:26:39'),
+(10, 1, 1, 0, '2019-11-27 10:26:39', '2019-11-27 10:26:39'),
+(11, 1, 1, 0, '2019-11-27 10:26:39', '2019-11-27 10:26:39'),
+(12, 1, 1, 0, '2019-11-27 10:26:39', '2019-11-27 10:26:39'),
+(13, 1, 1, 0, '2019-11-27 10:26:39', '2019-11-27 10:26:39'),
+(14, 1, 1, 0, '2019-11-27 10:26:39', '2019-11-27 10:26:39'),
+(15, 1, 1, 0, '2019-11-27 10:26:39', '2019-11-27 10:26:39'),
+(16, 1, 1, 0, '2019-11-27 10:26:39', '2019-11-27 10:26:39'),
+(17, 1, 1, 0, '2019-11-27 10:26:39', '2019-11-27 10:26:39'),
+(18, 1, 1, 0, '2019-11-27 10:26:39', '2019-11-27 10:26:39'),
+(19, 1, 1, 0, '2019-11-27 10:26:39', '2019-11-27 10:26:39'),
+(20, 1, 1, 0, '2019-11-27 10:26:39', '2019-11-27 10:26:39'),
+(21, 1, 1, 0, '2019-11-27 10:26:39', '2019-11-27 10:26:39'),
+(22, 1, 1, 0, '2019-11-27 10:26:39', '2019-11-27 10:26:39'),
+(23, 1, 1, 0, '2019-11-27 10:26:39', '2019-11-27 10:26:39'),
+(24, 1, 1, 0, '2019-11-27 10:26:39', '2019-11-27 10:26:39'),
+(25, 1, 1, 0, '2019-11-27 10:26:39', '2019-11-27 10:26:39'),
+(26, 1, 1, 0, '2019-11-27 10:26:39', '2019-11-27 10:26:39'),
+(27, 1, 1, 0, '2019-11-27 10:26:39', '2019-11-27 10:26:39'),
+(28, 1, 1, 0, '2019-11-27 10:26:39', '2019-11-27 10:26:39'),
+(29, 1, 1, 0, '2019-11-27 10:26:39', '2019-11-27 10:26:39'),
+(30, 1, 1, 0, '2019-11-27 10:26:39', '2019-11-27 10:26:39'),
+(31, 1, 1, 0, '2019-11-27 10:26:39', '2019-11-27 10:26:39'),
+(32, 1, 1, 0, '2019-11-27 10:26:39', '2019-11-27 10:26:39'),
+(33, 1, 1, 0, '2019-11-27 10:26:39', '2019-11-27 10:26:39'),
+(34, 1, 1, 0, '2019-11-27 10:26:39', '2019-11-27 10:26:39'),
+(35, 1, 1, 0, '2019-11-27 10:26:39', '2019-11-27 10:26:39'),
+(36, 1, 1, 0, '2019-11-27 10:26:39', '2019-11-27 10:26:39'),
+(37, 1, 1, 0, '2019-11-27 10:26:39', '2019-11-27 10:26:39'),
+(38, 1, 1, 0, '2019-11-27 10:26:39', '2019-11-27 10:26:39'),
+(39, 1, 1, 0, '2019-11-27 10:26:39', '2019-11-27 10:26:39'),
+(40, 1, 1, 0, '2019-11-27 10:26:39', '2019-11-27 10:26:39'),
+(41, 1, 1, 0, '2019-11-27 10:26:39', '2019-11-27 10:26:39'),
+(42, 1, 1, 0, '2019-11-27 10:26:39', '2019-11-27 10:26:39'),
+(43, 1, 1, 0, '2019-11-27 10:26:39', '2019-11-27 10:26:39'),
+(44, 1, 1, 0, '2019-11-27 10:26:39', '2019-11-27 10:26:39'),
+(45, 1, 1, 0, '2019-11-27 10:26:39', '2019-11-27 10:26:39'),
+(46, 1, 1, 0, '2019-11-27 10:26:39', '2019-11-27 10:26:39'),
+(47, 1, 1, 0, '2019-11-27 10:26:39', '2019-11-27 10:26:39'),
+(48, 1, 1, 0, '2019-11-27 10:26:39', '2019-11-27 10:26:39'),
+(49, 1, 1, 0, '2019-11-27 10:26:39', '2019-11-27 10:26:39'),
+(50, 1, 1, 0, '2019-11-27 10:26:39', '2019-11-27 10:26:39'),
+(51, 1, 1, 0, '2019-11-27 10:26:39', '2019-11-27 10:26:39'),
+(52, 1, 1, 0, '2019-11-27 10:26:39', '2019-11-27 10:26:39'),
+(53, 1, 1, 0, '2019-11-27 10:26:39', '2019-11-27 10:26:39'),
+(54, 1, 1, 0, '2019-11-27 10:26:39', '2019-11-27 10:26:39'),
+(55, 1, 1, 0, '2019-11-27 10:26:39', '2019-11-27 10:26:39');
 
 -- --------------------------------------------------------
 
@@ -667,6 +775,13 @@ CREATE TABLE `sylius_payment` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `sylius_payment`
+--
+
+INSERT INTO `sylius_payment` (`id`, `method_id`, `order_id`, `currency_code`, `amount`, `state`, `details`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, 'USD', 13310, 'cart', '[]', '2019-11-27 10:26:26', '2019-11-27 10:26:39');
 
 -- --------------------------------------------------------
 
@@ -765,6 +880,13 @@ CREATE TABLE `sylius_product` (
   `variant_selection_method` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `average_rating` double NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `sylius_product`
+--
+
+INSERT INTO `sylius_product` (`id`, `main_taxon_id`, `code`, `created_at`, `updated_at`, `enabled`, `variant_selection_method`, `average_rating`) VALUES
+(1, 1, 'CIALIS', '2019-11-27 09:53:05', '2019-11-27 09:53:05', 1, 'choice', 0);
 
 -- --------------------------------------------------------
 
@@ -892,6 +1014,13 @@ CREATE TABLE `sylius_product_channels` (
   `channel_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Dumping data for table `sylius_product_channels`
+--
+
+INSERT INTO `sylius_product_channels` (`product_id`, `channel_id`) VALUES
+(1, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -904,6 +1033,13 @@ CREATE TABLE `sylius_product_image` (
   `type` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `path` varchar(255) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `sylius_product_image`
+--
+
+INSERT INTO `sylius_product_image` (`id`, `owner_id`, `type`, `path`) VALUES
+(1, 1, NULL, '3f/46/1179e0a40234bb4afd16e818847a.jpeg');
 
 -- --------------------------------------------------------
 
@@ -1010,6 +1146,13 @@ CREATE TABLE `sylius_product_taxon` (
   `position` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Dumping data for table `sylius_product_taxon`
+--
+
+INSERT INTO `sylius_product_taxon` (`id`, `product_id`, `taxon_id`, `position`) VALUES
+(1, 1, 1, 0);
+
 -- --------------------------------------------------------
 
 --
@@ -1027,6 +1170,13 @@ CREATE TABLE `sylius_product_translation` (
   `short_description` longtext COLLATE utf8_unicode_ci,
   `locale` varchar(255) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `sylius_product_translation`
+--
+
+INSERT INTO `sylius_product_translation` (`id`, `translatable_id`, `name`, `slug`, `description`, `meta_keywords`, `meta_description`, `short_description`, `locale`) VALUES
+(1, 1, 'Cialis', 'cialis', 'Get back the endurance you deserve.\r\nWith Cialis, you can fight the erectile dysfunction. Fill out the form below and get started with Zeta Meds.\r\n\r\nTadalafil, brand name Cialis, is FDA approved to treat erectile dysfunction (ED) and impotence in men, as well as the symptoms of having an enlarged prostate. This medicine can be taken with or without food. Tadalafil does not prevent pregnancy or the spread of sexually transmitted diseases such as HIV.', 'cialis,zeta,zetameds,medicines', 'Tadalafil, brand name Cialis, is FDA approved to treat erectile dysfunction (ED) and impotence in men, as well as the symptoms of having an enlarged prostate.', 'Tadalafil, brand name Cialis, is FDA approved to treat erectile dysfunction (ED) and impotence in men, as well as the symptoms of having an enlarged prostate. This medicine can be taken with or without food. Tadalafil does not prevent pregnancy or the spread of sexually transmitted diseases such as HIV.', 'en_US');
 
 -- --------------------------------------------------------
 
@@ -1054,6 +1204,16 @@ CREATE TABLE `sylius_product_variant` (
   `shipping_required` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Dumping data for table `sylius_product_variant`
+--
+
+INSERT INTO `sylius_product_variant` (`id`, `product_id`, `tax_category_id`, `shipping_category_id`, `code`, `created_at`, `updated_at`, `position`, `version`, `on_hold`, `on_hand`, `tracked`, `width`, `height`, `depth`, `weight`, `shipping_required`) VALUES
+(2, 1, NULL, NULL, 'CIALIS_TADALAFIL_2_5MG', '2019-11-27 09:57:53', '2019-11-27 09:57:53', 0, 1, 0, 100, 1, NULL, NULL, NULL, NULL, 1),
+(3, 1, NULL, NULL, 'CIALIS_TADALAFIL_5_MG', '2019-11-27 10:04:19', '2019-11-27 10:04:19', 1, 1, 0, 100, 1, NULL, NULL, NULL, NULL, 1),
+(4, 1, NULL, NULL, 'CIALIS_TADALAFIL_10_MG', '2019-11-27 10:06:41', '2019-11-27 10:06:41', 2, 1, 0, 100, 1, NULL, NULL, NULL, NULL, 1),
+(5, 1, NULL, NULL, 'CIALIS_TADALAFIL_20_MG', '2019-11-27 10:08:02', '2019-11-27 10:08:02', 3, 1, 0, 100, 1, NULL, NULL, NULL, NULL, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -1077,6 +1237,16 @@ CREATE TABLE `sylius_product_variant_translation` (
   `name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `locale` varchar(255) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `sylius_product_variant_translation`
+--
+
+INSERT INTO `sylius_product_variant_translation` (`id`, `translatable_id`, `name`, `locale`) VALUES
+(2, 2, '2.5mg', 'en_US'),
+(3, 3, '5mg', 'en_US'),
+(4, 4, '10mg', 'en_US'),
+(5, 5, '20mg', 'en_US');
 
 -- --------------------------------------------------------
 
@@ -1105,8 +1275,7 @@ CREATE TABLE `sylius_promotion` (
 --
 
 INSERT INTO `sylius_promotion` (`id`, `code`, `name`, `description`, `priority`, `exclusive`, `usage_limit`, `used`, `coupon_based`, `starts_at`, `ends_at`, `created_at`, `updated_at`) VALUES
-(1, 'christmas', 'Christmas', 'Labore fugiat incidunt quibusdam et omnis corporis expedita.', 0, 0, NULL, 18, 0, NULL, NULL, '2019-11-26 01:08:14', '2019-11-26 01:08:16'),
-(2, 'new_year', 'New Year', 'Labore fugiat incidunt quibusdam et omnis corporis expedita.', 2, 0, 10, 10, 0, '2019-11-19 01:08:14', '2019-12-03 01:08:14', '2019-11-26 01:08:14', '2019-11-26 01:08:16');
+(2, 'new_year', 'New Year', 'Labore fugiat incidunt quibusdam et omnis corporis expedita.', 1, 0, 10, 10, 0, '2019-11-19 01:08:14', '2019-12-03 01:08:14', '2019-11-26 01:08:14', '2019-11-26 01:08:16');
 
 -- --------------------------------------------------------
 
@@ -1126,7 +1295,6 @@ CREATE TABLE `sylius_promotion_action` (
 --
 
 INSERT INTO `sylius_promotion_action` (`id`, `promotion_id`, `type`, `configuration`) VALUES
-(1, 1, 'order_percentage_discount', 'a:1:{s:10:\"percentage\";d:0.41;}'),
 (2, 2, 'order_fixed_discount', 'a:1:{s:11:\"FASHION_WEB\";a:1:{s:6:\"amount\";i:1000;}}');
 
 -- --------------------------------------------------------
@@ -1145,7 +1313,6 @@ CREATE TABLE `sylius_promotion_channels` (
 --
 
 INSERT INTO `sylius_promotion_channels` (`promotion_id`, `channel_id`) VALUES
-(1, 1),
 (2, 1);
 
 -- --------------------------------------------------------
@@ -1196,8 +1363,7 @@ CREATE TABLE `sylius_promotion_rule` (
 --
 
 INSERT INTO `sylius_promotion_rule` (`id`, `promotion_id`, `type`, `configuration`) VALUES
-(1, 1, 'cart_quantity', 'a:1:{s:5:\"count\";i:3;}'),
-(2, 2, 'item_total', 'a:1:{s:11:\"ZETA_MEDS\";a:1:{s:6:\"amount\";i:10000;}}');
+(2, 2, 'item_total', 'a:1:{s:9:\"ZETA_MEDS\";a:1:{s:6:\"amount\";i:10000;}}');
 
 -- --------------------------------------------------------
 
@@ -1235,6 +1401,13 @@ CREATE TABLE `sylius_shipment` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `sylius_shipment`
+--
+
+INSERT INTO `sylius_shipment` (`id`, `method_id`, `order_id`, `state`, `tracking`, `created_at`, `updated_at`) VALUES
+(1, 4, 1, 'cart', NULL, '2019-11-27 10:26:26', '2019-11-27 10:26:26');
 
 -- --------------------------------------------------------
 
@@ -1278,9 +1451,8 @@ CREATE TABLE `sylius_shipping_method` (
 --
 
 INSERT INTO `sylius_shipping_method` (`id`, `category_id`, `zone_id`, `tax_category_id`, `code`, `configuration`, `category_requirement`, `calculator`, `is_enabled`, `position`, `archived_at`, `created_at`, `updated_at`) VALUES
-(1, NULL, 1, NULL, 'ups', 'a:1:{s:9:\"ZETA_MEDS\";a:1:{s:6:\"amount\";i:751;}}a', 1, 'flat_rate', 1, 0, NULL, '2019-11-26 01:08:10', '2019-11-26 01:08:10'),
-(2, NULL, 1, NULL, 'dhl_express', 'a:1:{s:9:\"ZETA_MEDS\";a:1:{s:6:\"amount\";i:751;}}a', 1, 'flat_rate', 1, 1, NULL, '2019-11-26 01:08:10', '2019-11-26 01:08:10'),
-(3, NULL, 1, NULL, 'fedex', 'a:1:{s:9:\"ZETA_MEDS\";a:1:{s:6:\"amount\";i:751;}}a', 1, 'flat_rate', 1, 2, NULL, '2019-11-26 01:08:10', '2019-11-26 01:08:10');
+(4, NULL, 1, NULL, 'USPS_FREE_SHIPPING', 'a:1:{s:9:\"ZETA_MEDS\";a:1:{s:6:\"amount\";i:0;}}', 1, 'flat_rate', 1, 1, NULL, '2019-11-27 10:11:51', '2019-11-27 10:12:42'),
+(5, NULL, 1, NULL, 'USPS_PRIORITY', 'a:1:{s:9:\"ZETA_MEDS\";a:1:{s:6:\"amount\";i:1000;}}', 1, 'flat_rate', 1, 0, NULL, '2019-11-27 10:15:16', '2019-11-27 10:15:16');
 
 -- --------------------------------------------------------
 
@@ -1298,9 +1470,8 @@ CREATE TABLE `sylius_shipping_method_channels` (
 --
 
 INSERT INTO `sylius_shipping_method_channels` (`shipping_method_id`, `channel_id`) VALUES
-(1, 1),
-(2, 1),
-(3, 1);
+(4, 1),
+(5, 1);
 
 -- --------------------------------------------------------
 
@@ -1321,9 +1492,8 @@ CREATE TABLE `sylius_shipping_method_translation` (
 --
 
 INSERT INTO `sylius_shipping_method_translation` (`id`, `translatable_id`, `name`, `description`, `locale`) VALUES
-(1, 1, 'UPS', 'Debitis dolorem id voluptas tempore id ex.', 'en_US'),
-(2, 2, 'DHL Express', 'Quidem molestiae quia est id saepe.', 'en_US'),
-(3, 3, 'FedEx', 'Fugit sit consequuntur sint et.', 'en_US');
+(4, 4, 'USPS (Free Shipping)', NULL, 'en_US'),
+(5, 5, 'USPS Priority', NULL, 'en_US');
 
 -- --------------------------------------------------------
 
@@ -1397,6 +1567,13 @@ CREATE TABLE `sylius_taxon` (
   `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Dumping data for table `sylius_taxon`
+--
+
+INSERT INTO `sylius_taxon` (`id`, `tree_root`, `parent_id`, `code`, `tree_left`, `tree_right`, `tree_level`, `position`, `created_at`, `updated_at`) VALUES
+(1, 1, NULL, 'MEDICINES', 1, 2, 0, 0, '2019-11-27 09:48:05', '2019-11-27 09:48:05');
+
 -- --------------------------------------------------------
 
 --
@@ -1409,6 +1586,13 @@ CREATE TABLE `sylius_taxon_image` (
   `type` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `path` varchar(255) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `sylius_taxon_image`
+--
+
+INSERT INTO `sylius_taxon_image` (`id`, `owner_id`, `type`, `path`) VALUES
+(1, 1, NULL, '3f/e1/283ec7f9f26f432db1cdb7e5159b.jpeg');
 
 -- --------------------------------------------------------
 
@@ -1424,6 +1608,13 @@ CREATE TABLE `sylius_taxon_translation` (
   `description` longtext COLLATE utf8_unicode_ci,
   `locale` varchar(255) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `sylius_taxon_translation`
+--
+
+INSERT INTO `sylius_taxon_translation` (`id`, `translatable_id`, `name`, `slug`, `description`, `locale`) VALUES
+(1, 1, 'Medicines', 'medicines', 'Zeta Medicines', 'en_US');
 
 -- --------------------------------------------------------
 
@@ -2152,7 +2343,7 @@ ALTER TABLE `sylius_zone_member`
 -- AUTO_INCREMENT for table `brille24_tierprice`
 --
 ALTER TABLE `brille24_tierprice`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `sylius_address`
@@ -2170,7 +2361,7 @@ ALTER TABLE `sylius_address_log_entries`
 -- AUTO_INCREMENT for table `sylius_adjustment`
 --
 ALTER TABLE `sylius_adjustment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `sylius_admin_api_access_token`
@@ -2218,7 +2409,7 @@ ALTER TABLE `sylius_channel`
 -- AUTO_INCREMENT for table `sylius_channel_pricing`
 --
 ALTER TABLE `sylius_channel_pricing`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `sylius_country`
@@ -2290,19 +2481,19 @@ ALTER TABLE `sylius_locale`
 -- AUTO_INCREMENT for table `sylius_order`
 --
 ALTER TABLE `sylius_order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `sylius_order_item`
 --
 ALTER TABLE `sylius_order_item`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `sylius_order_item_unit`
 --
 ALTER TABLE `sylius_order_item_unit`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT for table `sylius_order_sequence`
@@ -2314,7 +2505,7 @@ ALTER TABLE `sylius_order_sequence`
 -- AUTO_INCREMENT for table `sylius_payment`
 --
 ALTER TABLE `sylius_payment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `sylius_payment_method`
@@ -2332,7 +2523,7 @@ ALTER TABLE `sylius_payment_method_translation`
 -- AUTO_INCREMENT for table `sylius_product`
 --
 ALTER TABLE `sylius_product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `sylius_product_association`
@@ -2374,7 +2565,7 @@ ALTER TABLE `sylius_product_attribute_value`
 -- AUTO_INCREMENT for table `sylius_product_image`
 --
 ALTER TABLE `sylius_product_image`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `sylius_product_option`
@@ -2410,25 +2601,25 @@ ALTER TABLE `sylius_product_review`
 -- AUTO_INCREMENT for table `sylius_product_taxon`
 --
 ALTER TABLE `sylius_product_taxon`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `sylius_product_translation`
 --
 ALTER TABLE `sylius_product_translation`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `sylius_product_variant`
 --
 ALTER TABLE `sylius_product_variant`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `sylius_product_variant_translation`
 --
 ALTER TABLE `sylius_product_variant_translation`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `sylius_promotion`
@@ -2464,7 +2655,7 @@ ALTER TABLE `sylius_province`
 -- AUTO_INCREMENT for table `sylius_shipment`
 --
 ALTER TABLE `sylius_shipment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `sylius_shipping_category`
@@ -2476,13 +2667,13 @@ ALTER TABLE `sylius_shipping_category`
 -- AUTO_INCREMENT for table `sylius_shipping_method`
 --
 ALTER TABLE `sylius_shipping_method`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `sylius_shipping_method_translation`
 --
 ALTER TABLE `sylius_shipping_method_translation`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `sylius_shop_billing_data`
@@ -2500,19 +2691,19 @@ ALTER TABLE `sylius_shop_user`
 -- AUTO_INCREMENT for table `sylius_taxon`
 --
 ALTER TABLE `sylius_taxon`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `sylius_taxon_image`
 --
 ALTER TABLE `sylius_taxon_image`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `sylius_taxon_translation`
 --
 ALTER TABLE `sylius_taxon_translation`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `sylius_tax_category`

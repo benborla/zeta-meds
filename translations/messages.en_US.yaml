@@ -8,6 +8,7 @@ sylius:
         register_in_the_store: Create an Account
         taxons: Categories
         new_taxon: New Category
+        edit_taxon: Edit Category
         manage_taxons: Manage Categories
         latest_products: Our Latest Products
         edit_channel: Edit Stores
@@ -39,7 +40,5 @@ sylius:
             plainPassword:
                 first: test
             verification: Confirm Password
-
-bitbag_sylius_cms:
-    ui:
-        cms: CMS
+        shipping_method:
+            channels: Stores

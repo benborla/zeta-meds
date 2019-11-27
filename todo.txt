@@ -9,3 +9,13 @@ Transaction Key  7GKtQAB87p26m8Hs
 
 HealthWarehouse:
 https://www.healthwarehouse.com/-97794.html
+
+Payment Capture Action Sample:
+https://github.com/Sylius/Sylius/issues/800
+
+
+payment plugin:
+https://docs.sylius.com/en/1.6/cookbook/payments/custom-payment-gateway.html
+
+sample payment plugin:
+https://github.com/kwreczycki/sylius-przelewy24-bundle

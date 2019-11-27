@@ -14,6 +14,7 @@ sylius:
         configure_channels_available_in_your_store: Configure available stores
         channels: Stores
         new_channel: New Store
+        channel: Store
 
     menu:
         admin:

@@ -19,3 +19,12 @@ https://docs.sylius.com/en/1.6/cookbook/payments/custom-payment-gateway.html
 
 sample payment plugin:
 https://github.com/kwreczycki/sylius-przelewy24-bundle
+
+
+ssh credentials:
+ssh benborla@107.180.89.20
+Z3tam3ds@2019
+
+
+www path: ~/www/zeta-meds
+

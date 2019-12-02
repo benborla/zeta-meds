@@ -30,33 +30,3 @@ www path: ~/www/zeta-meds
 
 mysql -u zetamed_admin -p zetamed_production < zetameds_dev-11-28-01-30.sq
 MySql password: cf=MW1sgNTv)
-
-
-Plugins to install:
-- /opt/cpanel/ea-php72/root/etc/php.ini
-    - /opt/cpanel/ea-php72/root/etc/php.d/20-bcmath.ini
-    - /opt/cpanel/ea-php72/root/etc/php.d/20-calendar.ini
-    - /opt/cpanel/ea-php72/root/etc/php.d/20-ctype.ini
-    - /opt/cpanel/ea-php72/root/etc/php.d/20-curl.ini
-    - /opt/cpanel/ea-php72/root/etc/php.d/20-dom.ini
-    - /opt/cpanel/ea-php72/root/etc/php.d/20-ftp.ini
-    - /opt/cpanel/ea-php72/root/etc/php.d/20-gd.ini
-    - /opt/cpanel/ea-php72/root/etc/php.d/20-imap.ini
-    - /opt/cpanel/ea-php72/root/etc/php.d/20-json.ini
-    - /opt/cpanel/ea-php72/root/etc/php.d/20-mysqlnd.ini
-    - /opt/cpanel/ea-php72/root/etc/php.d/20-pdo.ini
-    - /opt/cpanel/ea-php72/root/etc/php.d/20-phar.ini
-    - /opt/cpanel/ea-php72/root/etc/php.d/20-posix.ini
-    - /opt/cpanel/ea-php72/root/etc/php.d/20-simplexml.ini
-    - /opt/cpanel/ea-php72/root/etc/php.d/20-sockets.ini
-    - /opt/cpanel/ea-php72/root/etc/php.d/20-sqlite3.ini
-    - /opt/cpanel/ea-php72/root/etc/php.d/20-tokenizer.ini
-    - /opt/cpanel/ea-php72/root/etc/php.d/20-xml.ini
-    - /opt/cpanel/ea-php72/root/etc/php.d/20-xmlwriter.ini
-    - /opt/cpanel/ea-php72/root/etc/php.d/20-xsl.ini
-    - /opt/cpanel/ea-php72/root/etc/php.d/30-mysqli.ini
-    - /opt/cpanel/ea-php72/root/etc/php.d/30-pdo_mysql.ini
-    - /opt/cpanel/ea-php72/root/etc/php.d/30-pdo_sqlite.ini
-    - /opt/cpanel/ea-php72/root/etc/php.d/30-wddx.ini
-    - /opt/cpanel/ea-php72/root/etc/php.d/30-xmlreader.ini
-    - /opt/cpanel/ea-php72/root/etc/php.d/zzzzzzz-pecl.ini

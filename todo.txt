@@ -28,6 +28,9 @@ Z3tam3ds@2019
 
 www path: ~/www/zeta-meds
 
+mysql -u zetamed_admin -p zetamed_production < zetameds_dev-11-28-01-30.sq
+MySql password: cf=MW1sgNTv)
+
 
 Plugins to install:
 - /opt/cpanel/ea-php72/root/etc/php.ini

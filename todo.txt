@@ -30,3 +30,5 @@ www path: ~/www/zeta-meds
 
 mysql -u zetamed_admin -p zetamed_production < zetameds_dev-11-28-01-30.sq
 MySql password: cf=MW1sgNTv)
+
+DATABASE_URL=mysql://zetamed_admin:Z3tam3ds@2019@127.0.0.1/zetamed_production

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e8913cf394eef711f19372b6cbec54c5",
+    "content-hash": "7be6322718831dd287de1e674ac2312a",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -49,6 +49,80 @@
                 "transliterator"
             ],
             "time": "2017-04-04T11:38:05+00:00"
+        },
+        {
+            "name": "benborla/authorize-net-plugin",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/benborla/sylius-authorize-net.git",
+                "reference": "34f84e904dcfce5e64968bb94319fe602e518b07"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/benborla/sylius-authorize-net/zipball/34f84e904dcfce5e64968bb94319fe602e518b07",
+                "reference": "34f84e904dcfce5e64968bb94319fe602e518b07",
+                "shasum": ""
+            },
+            "require": {
+                "payum/authorize-net-aim": "^1.5",
+                "php": "^7.2",
+                "sylius/sylius": "^1.4"
+            },
+            "conflict": {
+                "symfony/browser-kit": "4.1.8",
+                "symfony/dependency-injection": "4.1.8",
+                "symfony/dom-crawler": "4.1.8",
+                "symfony/routing": "4.1.8",
+                "symfony/symfony": "4.1.8"
+            },
+            "require-dev": {
+                "behat/behat": "^3.4",
+                "behat/mink": "^1.7@dev",
+                "behat/mink-browserkit-driver": "^1.3",
+                "behat/mink-extension": "^2.2",
+                "behat/mink-selenium2-driver": "^1.3",
+                "friends-of-behat/page-object-extension": "^0.3",
+                "friends-of-behat/suite-settings-extension": "^1.0",
+                "friends-of-behat/symfony-extension": "^2.0",
+                "friends-of-behat/variadic-extension": "^1.1",
+                "lakion/mink-debug-extension": "^1.2.3",
+                "phpspec/phpspec": "^5.0",
+                "phpstan/phpstan-doctrine": "^0.10",
+                "phpstan/phpstan-shim": "^0.10",
+                "phpstan/phpstan-webmozart-assert": "^0.10",
+                "phpunit/phpunit": "^6.5",
+                "sensiolabs/security-checker": "^5.0",
+                "sylius-labs/coding-standard": "^2.0",
+                "symfony/browser-kit": "^3.4|^4.1",
+                "symfony/debug-bundle": "^3.4|^4.1",
+                "symfony/dotenv": "^4.2",
+                "symfony/intl": "^3.4|^4.1",
+                "symfony/web-profiler-bundle": "^3.4|^4.1",
+                "symfony/web-server-bundle": "^3.4|^4.1"
+            },
+            "type": "sylius-plugin",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.5-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "BenBorla\\AuthorizeNetPlugin\\": "src/",
+                    "Tests\\BenBorla\\AuthorizeNetPlugin\\": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Authorize.net payment gateway for Sylius",
+            "keywords": [
+                "sylius",
+                "sylius-plugin"
+            ],
+            "time": "2019-12-05T00:26:43+00:00"
         },
         {
             "name": "brille24/sylius-tierprice-plugin",
@@ -232,6 +306,38 @@
                 "slugify"
             ],
             "time": "2019-01-31T20:38:55+00:00"
+        },
+        {
+            "name": "czende/gopay-plugin",
+            "version": "v1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/czende/gopay-plugin.git",
+                "reference": "d43bd95a9163c14684d3fb2cbd6a41700464c243"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/czende/gopay-plugin/zipball/d43bd95a9163c14684d3fb2cbd6a41700464c243",
+                "reference": "d43bd95a9163c14684d3fb2cbd6a41700464c243",
+                "shasum": ""
+            },
+            "require": {
+                "gopay/payments-sdk-php": "^1.3.4",
+                "php": "^7.1",
+                "sylius/sylius": "^1.0"
+            },
+            "type": "sylius-plugin",
+            "autoload": {
+                "psr-4": {
+                    "Czende\\GoPayPlugin\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "GoPay payment gateway plugin for Sylius applications.",
+            "time": "2018-03-13T22:17:37+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -2007,6 +2113,57 @@
                 "uploadable"
             ],
             "time": "2019-03-17T18:16:12+00:00"
+        },
+        {
+            "name": "gopay/payments-sdk-php",
+            "version": "v1.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gopaycommunity/gopay-php-api.git",
+                "reference": "ee9285c5a560046c4d59eec34295198d2b832e98"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gopaycommunity/gopay-php-api/zipball/ee9285c5a560046c4d59eec34295198d2b832e98",
+                "reference": "ee9285c5a560046c4d59eec34295198d2b832e98",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^5.3.1|^6.2.1",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "hamcrest/hamcrest-php": "*",
+                "phpunit/phpunit": "<6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "GoPay\\": "src/"
+                },
+                "files": [
+                    "factory.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "GoPay",
+                    "homepage": "https://github.com/gopaycommunity/gopay-php-api/contributors"
+                }
+            ],
+            "description": "GoPay's PHP SDK for Payments REST API",
+            "keywords": [
+                "api",
+                "gopay",
+                "payments",
+                "rest",
+                "sdk"
+            ],
+            "time": "2019-07-11T12:34:04+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -15339,6 +15496,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "benborla/authorize-net-plugin": 20,
         "behat/mink": 20
     },
     "prefer-stable": true,

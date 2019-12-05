@@ -18,7 +18,9 @@
     ],
     "require": {
         "php": "^7.2",
+        "benborla/authorize-net-plugin": "dev-master",
         "brille24/sylius-tierprice-plugin": "^1.6",
+        "czende/gopay-plugin": "^1.0",
         "mollie/polyfill-libsodium": "^1.1",
         "sylius/grid-bundle": "^1.7",
         "sylius/invoicing-plugin": "^0.9",

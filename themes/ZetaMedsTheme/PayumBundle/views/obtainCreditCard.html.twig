@@ -1,0 +1,28 @@
+{# /vendor/payum/payum/src/Payum/Core/Bridge/Symfony/Resources/views/obtainCreditCard.html.twig #}
+{% extends layout ?: "@PayumCore/layout.html.twig" %}
+
+{% block payum_body %}
+
+    <div class="container py-5">
+        <div class="row mb-4">
+            <div class="col-lg-8 mx-auto text-center">
+            <h1 class="display-4">Authorize.net Payment Gateway</h1>
+            <p class="lead mb-0">Please enter your card details below</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-7 mx-auto">
+                <div class="bg-white rounded-lg shadow-sm p-5">
+                    <form method="POST" action="{{ actionUrl }}" role="form">
+                        {{ form_row(form, {'attr': {'class': 'form-group'} }) }}
+
+                        {{ form_rest(form) }}
+
+                        <div class="mb-5"></div>
+                        <input type="submit" value="Submit" class="subscribe btn btn-primary btn-block rounded-pill shadow-sm" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

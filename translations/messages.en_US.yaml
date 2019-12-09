@@ -42,3 +42,6 @@ sylius:
             verification: Confirm Password
         shipping_method:
             channels: Stores
+
+        payment_method:
+            channels: Stores

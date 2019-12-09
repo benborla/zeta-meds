@@ -2,6 +2,9 @@
     "akeneo/phpspec-skip-example-extension": {
         "version": "v3.0.0"
     },
+    "authorizenet/authorizenet": {
+        "version": "1.9.9"
+    },
     "beberlei/doctrineextensions": {
         "version": "v1.2.3"
     },
@@ -27,7 +30,7 @@
         "version": "v1.2.0"
     },
     "benborla/authorize-net-plugin": {
-        "version": "1.5-dev"
+        "version": "1.0-dev"
     },
     "brille24/sylius-tierprice-plugin": {
         "version": "v1.6"
@@ -55,9 +58,6 @@
     },
     "container-interop/container-interop": {
         "version": "1.2.0"
-    },
-    "czende/gopay-plugin": {
-        "version": "v1.0"
     },
     "doctrine/annotations": {
         "version": "1.0",
@@ -176,8 +176,8 @@
     "gedmo/doctrine-extensions": {
         "version": "v2.4.36"
     },
-    "gopay/payments-sdk-php": {
-        "version": "v1.4.1"
+    "goetas-webservices/xsd2php-runtime": {
+        "version": "v0.2.11"
     },
     "guzzlehttp/guzzle": {
         "version": "6.3.3"
@@ -368,6 +368,9 @@
     "phar-io/version": {
         "version": "1.0.1"
     },
+    "php": {
+        "version": "7.3"
+    },
     "php-cs-fixer/diff": {
         "version": "v1.3.0"
     },
@@ -527,6 +530,12 @@
             "ref": "421933bf8f0e75546ac8e00cb3eb12904fa2ac1a"
         }
     },
+    "setono/payum-quickpay": {
+        "version": "v1.0.0"
+    },
+    "setono/sylius-quickpay-plugin": {
+        "version": "v1.0.0-beta.3"
+    },
     "slam/php-cs-fixer-extensions": {
         "version": "v1.17.0"
     },
@@ -641,6 +650,9 @@
             "version": "3.3",
             "ref": "e3868d2f4a5104f19f844fe551099a00c6562527"
         }
+    },
+    "symfony/contracts": {
+        "version": "v1.1.0"
     },
     "symfony/css-selector": {
         "version": "v4.1.3"

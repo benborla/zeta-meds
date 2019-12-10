@@ -1,28 +1,53 @@
 {% import "@SyliusShop/Common/Macro/money.html.twig" as money %}
 
-<table class="table" id="sylius-product-variants">
-    <thead class="">
-        <tr>
-            <th class="border-0 h6">{{ 'sylius.ui.variant'|trans }}</th>
-            <th class="border-0 h6">{{ 'sylius.ui.price'|trans }}</th>
-            <th class="border-0 h6"></th>
-        </tr>
-    </thead>
-    <tbody>
+{% set productPrice = money.calculatePrice(product|sylius_resolve_variant)|replace({ ('$') : ''}) %}
+
+
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
     {% for key, variant in product.variants %}
-        <tr>
-            <td>
-                {{ variant.name }}
-                {% if product.hasOptions() %}
-                    <span class="text-muted">|</span>
-                    {% for optionValue in variant.optionValues %}
-                        <span class="pr-1">{{ optionValue.value }}</span>
-                    {% endfor %}
-                {% endif %}
-            </td>
-            <td data-js-product-variant-price>{{ money.calculatePrice(variant) }}</td>
-            <td class="text-right">{{ form_widget(form.cartItem.variant[key], {'label': false}) }}</td>
-        </tr>
+    <div class="panel panel-default">
+        <div class="panel-heading p-1 mb-1 bg-primary text-white" role="tab" id="heading_{{ variant.id }}">
+            <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#item_{{ variant.id }}" aria-expanded="true" aria-controls="item_{{ variant.id }}">
+                    <div class="float-right">
+                        <i class="fa fa-chevron-down"></i>
+                    </div>
+                    <span class="text-white">
+                        {{ product.name }} {{ variant.name }}
+                    </span>
+                </a>
+            </h4>
+        </div>
+        <span class="clearfix"></span>
+        <div id="item_{{ variant.id }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading_{{ variant.id }}">
+            <div class="panel-body">
+            {% set tier_prices = variant.getTierPricesForChannel(sylius.channel,sylius.customer) %}
+                <table class="ui stackable celled table">
+                    <tbody>
+                    {% if tier_prices|length > 0 %}
+                        {% for tierPrice in tier_prices %}
+                            {% set savedPrice =  100 - (tierPrice.price / productPrice) %}
+                            <tr>
+                                <td>
+                                    <p class="mt-1">{{ tierPrice.qty|number_format }} Tablets</p>
+                                    <input type="hidden"
+                                    id="sylius_add_to_cart_cartItem_quantity"
+                                    name="sylius_add_to_cart[cartItem][quantity]"
+                                    required="required" min="1" class="form-control product-quantity" value="{{ tierPrice.qty|number_format }}">
+                                </td>
+                                <td><p class="mt-1">{{ money.convertAndFormat(tierPrice.price, sylius.channel.baseCurrency) }} <span class="text-danger">(Save {{ savedPrice|number_format }}%)</span></p></td>
+                                <td><button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i></button></td>
+                            </tr>
+
+
+                        {% endfor %}
+                    {% else %}
+
+                    {% endif %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
     {% endfor %}
-    </tbody>
-</table>
+</div>

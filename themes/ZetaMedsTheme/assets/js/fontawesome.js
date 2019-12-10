@@ -21,6 +21,7 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons/faPlus';
 import { faPencilAlt } from '@fortawesome/free-solid-svg-icons/faPencilAlt';
 import { faSyncAlt } from '@fortawesome/free-solid-svg-icons/faSyncAlt';
 import { faEdit } from '@fortawesome/free-solid-svg-icons/faEdit';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons/faChevronDown';
 
 library.add(
   faStar,
@@ -42,5 +43,6 @@ library.add(
   faPencilAlt,
   faSyncAlt,
   faEdit,
+  faChevronDown,
 );
 dom.watch();

@@ -148,3 +148,10 @@ label.required {
     display: inline;
     margin-right: 0;
 }
+
+.panel-heading-quantity {
+    border-radius: 3px;
+    .panel-title {
+        font-size: 15px;
+    }
+}

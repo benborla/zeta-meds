@@ -4,16 +4,18 @@
 
 
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    <p class="lead">Select quantity below</p>
     {% for key, variant in product.variants %}
+    {% set remainingStock = variant.onHand - variant.onHold %}
     <div class="panel panel-default">
-        <div class="panel-heading p-1 mb-1 bg-primary text-white" role="tab" id="heading_{{ variant.id }}">
+        <div class="panel-heading-quantity panel-heading p-1 mb-1 bg-primary text-white" role="tab" id="heading_{{ variant.id }}">
             <h4 class="panel-title">
                 <a role="button" data-toggle="collapse" data-parent="#accordion" href="#item_{{ variant.id }}" aria-expanded="true" aria-controls="item_{{ variant.id }}">
                     <div class="float-right">
                         <i class="fa fa-chevron-down"></i>
                     </div>
                     <span class="text-white">
-                        {{ product.name }} {{ variant.name }}
+                        {{ product.name }} {{ variant.name }} (Remaining: {{ remainingStock|number_format }})
                     </span>
                 </a>
             </h4>
@@ -24,6 +26,7 @@
             {% set tier_prices = variant.getTierPricesForChannel(sylius.channel,sylius.customer) %}
                 <table class="ui stackable celled table">
                     <tbody>
+                    {# add custom input here for quantity #}
                     {% if tier_prices|length > 0 %}
                         {% for tierPrice in tier_prices %}
                             {% set savedPrice =  100 - (tierPrice.price / productPrice) %}
@@ -42,7 +45,13 @@
 
                         {% endfor %}
                     {% else %}
-
+                            <tr>
+                                <td>
+                                    <p class="mt-1">{{ tierPrice.qty|number_format }} Tablets</p>
+                                </td>
+                                <td><p class="mt-1">{{ money.convertAndFormat(tierPrice.price, sylius.channel.baseCurrency) }}</p></td>
+                                <td><button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i></button></td>
+                            </tr>
                     {% endif %}
                     </tbody>
                 </table>

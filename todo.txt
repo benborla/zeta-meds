@@ -32,3 +32,11 @@ mysql -u zetamed_admin -p zetamed_production < zetameds_dev-11-28-01-30.sq
 MySql password: cf=MW1sgNTv)
 
 DATABASE_URL=mysql://zetamed_admin:Z3tam3ds@2019@127.0.0.1/zetamed_production
+
+---
+Install wkhtmltopdf
+https://jaimegris.wordpress.com/2015/03/04/how-to-install-wkhtmltopdf-in-centos-7-0/
+this depends on X Server
+yum search xvfb
+install the first item on the result
+

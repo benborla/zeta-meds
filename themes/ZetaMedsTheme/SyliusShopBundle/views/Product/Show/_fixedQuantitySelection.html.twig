@@ -65,14 +65,6 @@
                                     ><i class="fa fa-shopping-bag"></i></button></td>
                             </tr>
                         {% endfor %}
-                    {% else %}
-                            <tr>
-                                <td>
-                                    <p class="mt-1">{{ tierPrice.qty|number_format }} Tablets</p>
-                                </td>
-                                <td><p class="mt-1">{{ money.convertAndFormat(tierPrice.price, sylius.channel.baseCurrency) }}</p></td>
-                                <td><button type="button" class="btn btn-primary"><i class="fa fa-plus"></i></button></td>
-                            </tr>
                     {% endif %}
                     </tbody>
                 </table>

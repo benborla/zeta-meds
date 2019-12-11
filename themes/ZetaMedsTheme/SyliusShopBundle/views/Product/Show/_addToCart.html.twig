@@ -11,11 +11,12 @@
         {{ form_start(form, {'action': path('sylius_shop_ajax_cart_add_item', {'productId': product.id}), 'attr': {'id': 'sylius-product-adding-to-cart', 'data-js-add-to-cart': 'form', 'class': 'loadable', 'novalidate': 'novalidate', 'data-redirect': path(configuration.getRedirectRoute('summary'))}}) }}
             {{ form_errors(form) }}
             <div class="alert alert-danger d-none" data-js-add-to-cart="error"></div>
+            {% include '@SyliusShop/Product/Show/_fixedQuantitySelection.html.twig' %}
             {% if not product.simple %}
                 {% if product.variantSelectionMethodChoice %}
-                    {% include '@SyliusShop/Product/Show/_variants.html.twig' %}
+                    {# include '@SyliusShop/Product/Show/_variants.html.twig' #}
                 {% else %}
-                    {% include '@SyliusShop/Product/Show/_options.html.twig' %}
+                    {# include '@SyliusShop/Product/Show/_options.html.twig' #}
                 {% endif %}
             {% endif %}
 
@@ -27,7 +28,7 @@
                 </div>
                 <div class="col">
                     <div class="form-group">
-                        <button type="submit" class="btn btn-block btn-primary">
+                        <button type="submit" class="btn btn-block btn-primary" style="display:none" disabled>
                             <span class="btn-icon">{{ icons.cart() }}</span>
                             {{ 'sylius.ui.add_to_cart'|trans }}
                         </button>
@@ -35,6 +36,7 @@
                 </div>
             </div>
             {{ form_row(form._token) }}
+            <button type="submit" id="add_to_cart_final" style="display:none"></button>
         {{ form_end(form, {'render_rest': false}) }}
     </div>
 </div>

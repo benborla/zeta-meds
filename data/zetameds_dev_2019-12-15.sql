@@ -1,13 +1,13 @@
 # ************************************************************
 # Sequel Pro SQL dump
-# Version 5438
+# Version 5446
 #
 # https://www.sequelpro.com/
 # https://github.com/sequelpro/sequelpro
 #
-# Host: 127.0.0.1 (MySQL 5.7.25)
+# Host: 127.0.0.1 (MySQL 5.7.28)
 # Database: zetameds_dev
-# Generation Time: 2019-11-27 17:30:02 +0000
+# Generation Time: 2019-12-14 18:27:02 +0000
 # ************************************************************
 
 
@@ -51,7 +51,6 @@ VALUES
 	(9,215,25,1,5,NULL),
 	(10,210,37,1,5,NULL),
 	(11,205,41,1,5,NULL),
-	(12,175,29,1,7,NULL),
 	(13,245,31,1,9,NULL),
 	(14,280,8,1,12,NULL),
 	(15,275,16,1,12,NULL),
@@ -153,6 +152,16 @@ CREATE TABLE `sylius_address` (
   CONSTRAINT `FK_B97FF0589395C3F3` FOREIGN KEY (`customer_id`) REFERENCES `sylius_customer` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+LOCK TABLES `sylius_address` WRITE;
+/*!40000 ALTER TABLE `sylius_address` DISABLE KEYS */;
+
+INSERT INTO `sylius_address` (`id`, `customer_id`, `first_name`, `last_name`, `phone_number`, `street`, `company`, `city`, `postcode`, `created_at`, `updated_at`, `country_code`, `province_code`, `province_name`)
+VALUES
+	(1,NULL,'Ben','Borla',NULL,'3850 SE 58th Ave','Zeta','Ocala','34480','2019-12-14 05:30:46','2019-12-14 05:30:46','US','US-FL',NULL),
+	(2,NULL,'Ben','Borla',NULL,'3850 SE 58th Ave','Zeta','Ocala','34480','2019-12-14 05:30:46','2019-12-14 05:30:46','US','US-FL',NULL);
+
+/*!40000 ALTER TABLE `sylius_address` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 # Dump of table sylius_address_log_entries
@@ -172,6 +181,16 @@ CREATE TABLE `sylius_address_log_entries` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+LOCK TABLES `sylius_address_log_entries` WRITE;
+/*!40000 ALTER TABLE `sylius_address_log_entries` DISABLE KEYS */;
+
+INSERT INTO `sylius_address_log_entries` (`id`, `action`, `logged_at`, `object_id`, `object_class`, `version`, `data`, `username`)
+VALUES
+	(1,'create','2019-12-14 05:30:46','1','App\\Entity\\Addressing\\Address',1,'a:10:{s:9:\"firstName\";s:3:\"Ben\";s:8:\"lastName\";s:5:\"Borla\";s:11:\"phoneNumber\";N;s:6:\"street\";s:16:\"3850 SE 58th Ave\";s:7:\"company\";s:4:\"Zeta\";s:4:\"city\";s:5:\"Ocala\";s:8:\"postcode\";s:5:\"34480\";s:11:\"countryCode\";s:2:\"US\";s:12:\"provinceCode\";s:5:\"US-FL\";s:12:\"provinceName\";N;}','benborla@icloud.com'),
+	(2,'create','2019-12-14 05:30:46','2','App\\Entity\\Addressing\\Address',1,'a:10:{s:9:\"firstName\";s:3:\"Ben\";s:8:\"lastName\";s:5:\"Borla\";s:11:\"phoneNumber\";N;s:6:\"street\";s:16:\"3850 SE 58th Ave\";s:7:\"company\";s:4:\"Zeta\";s:4:\"city\";s:5:\"Ocala\";s:8:\"postcode\";s:5:\"34480\";s:11:\"countryCode\";s:2:\"US\";s:12:\"provinceCode\";s:5:\"US-FL\";s:12:\"provinceName\";N;}','benborla@icloud.com');
+
+/*!40000 ALTER TABLE `sylius_address_log_entries` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 # Dump of table sylius_adjustment
@@ -594,6 +613,15 @@ CREATE TABLE `sylius_customer` (
   CONSTRAINT `FK_7E82D5E6D2919A68` FOREIGN KEY (`customer_group_id`) REFERENCES `sylius_customer_group` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+LOCK TABLES `sylius_customer` WRITE;
+/*!40000 ALTER TABLE `sylius_customer` DISABLE KEYS */;
+
+INSERT INTO `sylius_customer` (`id`, `customer_group_id`, `default_address_id`, `email`, `email_canonical`, `first_name`, `last_name`, `birthday`, `gender`, `created_at`, `updated_at`, `phone_number`, `subscribed_to_newsletter`)
+VALUES
+	(1,NULL,NULL,'benborla@icloud.com','benborla@icloud.com','Ben','Borla','1993-03-29 00:00:00','u','2019-12-14 05:27:59','2019-12-14 05:27:59',NULL,0);
+
+/*!40000 ALTER TABLE `sylius_customer` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 # Dump of table sylius_customer_group
@@ -652,7 +680,8 @@ LOCK TABLES `sylius_gateway_config` WRITE;
 INSERT INTO `sylius_gateway_config` (`id`, `gateway_name`, `factory_name`, `config`)
 VALUES
 	(1,'Offline','offline','[]'),
-	(2,'Offline','offline','[]');
+	(2,'Offline','offline','[]'),
+	(3,'authorize_net_sandbox','authorize_net_aim','{\"login_id\":\"5tV4X2b9\",\"transaction_key\":\"34a5hgw4zDf9QU28\",\"auto_capture\":1,\"use_authorize\":null}');
 
 /*!40000 ALTER TABLE `sylius_gateway_config` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -838,7 +867,8 @@ LOCK TABLES `sylius_order` WRITE;
 INSERT INTO `sylius_order` (`id`, `shipping_address_id`, `billing_address_id`, `channel_id`, `promotion_coupon_id`, `customer_id`, `number`, `notes`, `state`, `checkout_completed_at`, `items_total`, `adjustments_total`, `total`, `created_at`, `updated_at`, `currency_code`, `locale_code`, `checkout_state`, `payment_state`, `shipping_state`, `token_value`, `customer_ip`)
 VALUES
 	(1,NULL,NULL,1,NULL,NULL,NULL,NULL,'cart',NULL,13310,0,13310,'2019-11-27 10:26:26','2019-11-27 10:26:39','USD','en_US','cart','cart','cart',NULL,NULL),
-	(2,NULL,NULL,1,NULL,NULL,NULL,NULL,'cart',NULL,320,0,320,'2019-11-27 22:09:25','2019-11-28 00:23:33','USD','en_US','cart','cart','cart',NULL,NULL);
+	(2,NULL,NULL,1,NULL,NULL,NULL,NULL,'cart',NULL,320,0,320,'2019-11-27 22:09:25','2019-11-28 00:23:33','USD','en_US','cart','cart','cart',NULL,NULL),
+	(3,1,2,1,NULL,1,NULL,NULL,'cart',NULL,0,0,0,'2019-12-14 05:28:45','2019-12-14 15:16:40','USD','en_US','payment_selected','cart','cart',NULL,NULL);
 
 /*!40000 ALTER TABLE `sylius_order` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1047,8 +1077,9 @@ LOCK TABLES `sylius_payment_method` WRITE;
 
 INSERT INTO `sylius_payment_method` (`id`, `gateway_config_id`, `code`, `environment`, `is_enabled`, `position`, `created_at`, `updated_at`)
 VALUES
-	(1,1,'cash_on_delivery',NULL,1,0,'2019-11-26 01:08:10','2019-11-26 01:08:10'),
-	(2,2,'bank_transfer',NULL,1,1,'2019-11-26 01:08:10','2019-11-26 01:08:10');
+	(1,1,'cash_on_delivery',NULL,0,1,'2019-11-26 01:08:10','2019-12-14 04:52:13'),
+	(2,2,'bank_transfer',NULL,0,2,'2019-11-26 01:08:10','2019-12-14 04:52:28'),
+	(3,3,'AUTHORIZE_NET_SANDBOX',NULL,1,0,'2019-12-14 04:53:47','2019-12-14 04:53:47');
 
 /*!40000 ALTER TABLE `sylius_payment_method` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1074,8 +1105,7 @@ LOCK TABLES `sylius_payment_method_channels` WRITE;
 
 INSERT INTO `sylius_payment_method_channels` (`payment_method_id`, `channel_id`)
 VALUES
-	(1,1),
-	(2,1);
+	(3,1);
 
 /*!40000 ALTER TABLE `sylius_payment_method_channels` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1105,7 +1135,8 @@ LOCK TABLES `sylius_payment_method_translation` WRITE;
 INSERT INTO `sylius_payment_method_translation` (`id`, `translatable_id`, `name`, `description`, `instructions`, `locale`)
 VALUES
 	(1,1,'Cash on delivery','Ipsam ratione aut modi voluptatem quibusdam facilis occaecati sit.',NULL,'en_US'),
-	(2,2,'Bank transfer','Voluptatem quod odio et consequatur.',NULL,'en_US');
+	(2,2,'Bank transfer','Voluptatem quod odio et consequatur.',NULL,'en_US'),
+	(3,3,'Authorize.net (Sandbox Mode)','For testing guide, please see link: https://developer.authorize.net/hello_world/testing_guide/',NULL,'en_US');
 
 /*!40000 ALTER TABLE `sylius_payment_method_translation` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1187,8 +1218,8 @@ LOCK TABLES `sylius_product_association` WRITE;
 
 INSERT INTO `sylius_product_association` (`id`, `association_type_id`, `product_id`, `created_at`, `updated_at`)
 VALUES
-	(1,2,2,'2019-11-27 22:07:50','2019-11-27 22:07:50'),
-	(2,2,5,'2019-11-28 00:12:02','2019-11-28 00:12:02');
+	(1,2,2,'2019-11-27 22:07:50','2019-12-14 18:11:26'),
+	(2,2,5,'2019-11-28 00:12:02','2019-12-14 18:09:59');
 
 /*!40000 ALTER TABLE `sylius_product_association` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1388,12 +1419,12 @@ LOCK TABLES `sylius_product_image` WRITE;
 
 INSERT INTO `sylius_product_image` (`id`, `owner_id`, `type`, `path`)
 VALUES
-	(1,1,NULL,'3f/46/1179e0a40234bb4afd16e818847a.jpeg'),
-	(2,2,NULL,'41/1d/3ab204aa8b24189f12da5dc94891.jpeg'),
-	(3,3,NULL,'cd/d0/85deabe6186c596eb9ed90c27410.jpeg'),
-	(4,4,NULL,'2f/96/20d1b5f62b3b7f3b7f01136a17ab.jpeg'),
-	(5,5,NULL,'3a/01/acdea121a2d24e37b624b393022f.jpeg'),
-	(6,6,NULL,'16/c8/7b6690e2620b1fc6f847c5f1e633.jpeg');
+	(1,1,NULL,'ac/45/b7c79057e3df1ca0903a47d11457.jpeg'),
+	(2,2,NULL,'1d/39/b65d0d33f4d5c69e735d253f04ca.jpeg'),
+	(4,4,NULL,'14/21/df9494548f1b8d6f128616b0aabe.jpeg'),
+	(6,6,NULL,'7b/1a/de40f913269351985f50266351cc.jpeg'),
+	(7,3,NULL,'c5/5d/87c78c2bcbc864c19f30903e83d8.jpeg'),
+	(8,5,NULL,'6a/82/0b64c6d48dce366313f19969991b.jpeg');
 
 /*!40000 ALTER TABLE `sylius_product_image` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1637,19 +1668,19 @@ LOCK TABLES `sylius_product_variant` WRITE;
 
 INSERT INTO `sylius_product_variant` (`id`, `product_id`, `tax_category_id`, `shipping_category_id`, `code`, `created_at`, `updated_at`, `position`, `version`, `on_hold`, `on_hand`, `tracked`, `width`, `height`, `depth`, `weight`, `shipping_required`)
 VALUES
-	(2,1,NULL,NULL,'CIALIS_TADALAFIL_2_5MG','2019-11-27 09:57:53','2019-11-28 00:23:07',0,3,0,100,1,NULL,NULL,NULL,NULL,1),
-	(3,1,NULL,NULL,'CIALIS_TADALAFIL_5_MG','2019-11-27 10:04:19','2019-11-27 10:04:19',1,1,0,100,1,NULL,NULL,NULL,NULL,1),
-	(4,1,NULL,NULL,'CIALIS_TADALAFIL_10_MG','2019-11-27 10:06:41','2019-11-27 10:06:41',2,1,0,100,1,NULL,NULL,NULL,NULL,1),
-	(5,1,NULL,NULL,'CIALIS_TADALAFIL_20_MG','2019-11-27 10:08:02','2019-11-27 10:08:02',3,1,0,100,1,NULL,NULL,NULL,NULL,1),
-	(7,2,NULL,NULL,'PROPECIA_FINASTERIDE_1MG','2019-11-27 22:08:51','2019-11-27 22:08:51',0,1,0,100,1,NULL,NULL,NULL,NULL,1),
-	(9,3,NULL,NULL,'VALTREX_VALACYCLOVIR_500_MG','2019-11-27 22:20:43','2019-11-27 22:20:43',0,1,0,100,1,NULL,NULL,NULL,NULL,1),
-	(10,3,NULL,NULL,'VALTREX_VALACYCLOVIR_100_MG','2019-11-27 22:23:52','2019-11-27 22:23:52',1,1,0,100,1,NULL,NULL,NULL,NULL,1),
-	(12,4,NULL,NULL,'VIAGRA_SILDENAFIL_25_MG','2019-11-27 22:31:17','2019-11-27 22:31:17',0,1,0,100,1,NULL,NULL,NULL,NULL,1),
-	(13,4,NULL,NULL,'VIAGRA_SILDENAFIL_50_MG','2019-11-27 22:33:22','2019-11-27 22:33:23',1,1,0,100,1,NULL,NULL,NULL,NULL,1),
-	(14,4,NULL,NULL,'VIAGRA_SILDENAFIL_100_MG','2019-11-27 22:35:28','2019-11-27 22:35:28',2,1,0,100,1,NULL,NULL,NULL,NULL,1),
-	(16,5,NULL,NULL,'LEVITRA_VARDENAFIL_10_MG','2019-11-28 00:13:14','2019-11-28 00:13:14',0,1,0,100,1,NULL,NULL,NULL,NULL,1),
-	(17,5,NULL,NULL,'LEVITRA_VARDENAFIL_20_MG','2019-11-28 00:14:22','2019-11-28 00:14:22',1,1,0,100,1,NULL,NULL,NULL,NULL,1),
-	(18,6,NULL,NULL,'RETIN_A','2019-11-28 00:16:41','2019-11-28 00:16:41',0,1,0,100,1,NULL,NULL,NULL,NULL,1);
+	(2,1,4,NULL,'CIALIS_TADALAFIL_2_5MG','2019-11-27 09:57:53','2019-12-14 15:46:46',0,7,0,100,1,NULL,NULL,NULL,NULL,1),
+	(3,1,4,NULL,'CIALIS_TADALAFIL_5_MG','2019-11-27 10:04:19','2019-12-14 14:52:00',1,2,0,100,1,NULL,NULL,NULL,NULL,1),
+	(4,1,4,NULL,'CIALIS_TADALAFIL_10_MG','2019-11-27 10:06:41','2019-12-14 14:52:09',2,2,0,100,1,NULL,NULL,NULL,NULL,1),
+	(5,1,4,NULL,'CIALIS_TADALAFIL_20_MG','2019-11-27 10:08:02','2019-12-14 14:52:19',3,2,0,100,1,NULL,NULL,NULL,NULL,1),
+	(7,2,4,NULL,'PROPECIA_FINASTERIDE_1MG','2019-11-27 22:08:51','2019-12-14 18:11:26',0,3,0,100,0,NULL,NULL,NULL,NULL,1),
+	(9,3,4,NULL,'VALTREX_VALACYCLOVIR_500_MG','2019-11-27 22:20:43','2019-12-14 14:58:35',0,2,0,100,1,NULL,NULL,NULL,NULL,1),
+	(10,3,4,NULL,'VALTREX_VALACYCLOVIR_100_MG','2019-11-27 22:23:52','2019-12-14 14:58:46',1,2,0,100,1,NULL,NULL,NULL,NULL,1),
+	(12,4,4,NULL,'VIAGRA_SILDENAFIL_25_MG','2019-11-27 22:31:17','2019-12-14 14:59:46',0,2,0,100,1,NULL,NULL,NULL,NULL,1),
+	(13,4,4,NULL,'VIAGRA_SILDENAFIL_50_MG','2019-11-27 22:33:22','2019-12-14 14:59:51',1,2,0,100,1,NULL,NULL,NULL,NULL,1),
+	(14,4,4,NULL,'VIAGRA_SILDENAFIL_100_MG','2019-11-27 22:35:28','2019-12-14 14:59:58',2,2,0,100,1,NULL,NULL,NULL,NULL,1),
+	(16,5,4,NULL,'LEVITRA_VARDENAFIL_10_MG','2019-11-28 00:13:14','2019-12-14 14:55:02',0,2,0,100,1,NULL,NULL,NULL,NULL,1),
+	(17,5,4,NULL,'LEVITRA_VARDENAFIL_20_MG','2019-11-28 00:14:22','2019-12-14 14:55:27',1,2,0,100,1,NULL,NULL,NULL,NULL,1),
+	(18,6,4,NULL,'RETIN_A','2019-11-28 00:16:41','2019-12-14 14:57:11',0,2,0,100,1,NULL,NULL,NULL,NULL,1);
 
 /*!40000 ALTER TABLE `sylius_product_variant` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1705,7 +1736,7 @@ VALUES
 	(14,14,'100mg','en_US'),
 	(16,16,'10mg','en_US'),
 	(17,17,'20mg','en_US'),
-	(18,18,NULL,'en_US');
+	(18,18,'Retin A','en_US');
 
 /*!40000 ALTER TABLE `sylius_product_variant_translation` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1887,7 +1918,56 @@ LOCK TABLES `sylius_province` WRITE;
 
 INSERT INTO `sylius_province` (`id`, `country_id`, `code`, `name`, `abbreviation`)
 VALUES
-	(1,1,'US-FL','Florida','FL');
+	(2,1,'US-AL','Alabama','AL'),
+	(3,1,'US-AK','Alaska','AK'),
+	(4,1,'US-AZ','Arizona','AZ'),
+	(5,1,'US-AR','Arkansas','AR'),
+	(6,1,'US-CA','California','CA'),
+	(7,1,'US-CO','Colorado','CO'),
+	(8,1,'US-CT','Connecticut','CT'),
+	(9,1,'US-DE','Delaware','DE'),
+	(10,1,'US-FL','Florida','FL'),
+	(11,1,'US-GA','Georgia','GA'),
+	(12,1,'US-HI','Hawaii','HI'),
+	(13,1,'US-ID','Idaho','ID'),
+	(14,1,'US-IL','Illinois','IL'),
+	(15,1,'US-IN','Indiana','IN'),
+	(16,1,'US-IA','Iowa','IA'),
+	(17,1,'US-KS','Kansas','KS'),
+	(18,1,'US-KY','Kentucky','KY'),
+	(19,1,'US-LA','Louisiana','LA'),
+	(20,1,'US-ME','Maine','ME'),
+	(21,1,'US-MD','Maryland','MD'),
+	(22,1,'US-MA','Massachusetts','MA'),
+	(23,1,'US-MI','Michigan','MI'),
+	(24,1,'US-MN','Minnesota','MN'),
+	(25,1,'US-MS','Mississippi','MS'),
+	(26,1,'US-MO','Missouri','MO'),
+	(27,1,'US-MT','Montana','MT'),
+	(28,1,'US-NE','Nebraska','NE'),
+	(29,1,'US-NV','Nevada','NV'),
+	(30,1,'US-NH','New Hampshire','NH'),
+	(31,1,'US-NJ','New Jersey','NJ'),
+	(32,1,'US-NM','New Mexico','NM'),
+	(33,1,'US-NY','New York','NY'),
+	(34,1,'US-NC','North Carolina','NC'),
+	(35,1,'US-ND','North Dakota','ND'),
+	(36,1,'US-OH','Ohio','OH'),
+	(37,1,'US-OK','Oklahoma','OK'),
+	(38,1,'US-OR','Oregon','OR'),
+	(39,1,'US-PA','Pennsylvania','PA'),
+	(40,1,'US-RI','Rhode Island','RI'),
+	(41,1,'US-SC','South Carolina','SC'),
+	(42,1,'US-SD','South Dakota','SD'),
+	(43,1,'US-TN','Tennessee','TN'),
+	(44,1,'US-TX','Texas','TX'),
+	(45,1,'US-UT','Utah','UT'),
+	(46,1,'US-VT','Vermont','VT'),
+	(47,1,'US-VA','Virginia','VA'),
+	(48,1,'US-WA','Washington','WA'),
+	(49,1,'US-WV','West Virginia','WV'),
+	(50,1,'US-WI','Wisconsin','WI'),
+	(51,1,'US-WY','Wyoming','WY');
 
 /*!40000 ALTER TABLE `sylius_province` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -2099,6 +2179,15 @@ CREATE TABLE `sylius_shop_user` (
   CONSTRAINT `FK_7C2B74809395C3F3` FOREIGN KEY (`customer_id`) REFERENCES `sylius_customer` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+LOCK TABLES `sylius_shop_user` WRITE;
+/*!40000 ALTER TABLE `sylius_shop_user` DISABLE KEYS */;
+
+INSERT INTO `sylius_shop_user` (`id`, `customer_id`, `username`, `username_canonical`, `enabled`, `salt`, `password`, `last_login`, `password_reset_token`, `password_requested_at`, `email_verification_token`, `verified_at`, `locked`, `expires_at`, `credentials_expire_at`, `roles`, `email`, `email_canonical`, `created_at`, `updated_at`, `encoder_name`)
+VALUES
+	(1,1,'benborla@icloud.com','benborla@icloud.com',1,'2qksqgue53ggo4wsccosgc4g0occ0g8','$argon2i$v=19$m=65536,t=4,p=1$RC9rZ2NpSW5MLzNpc0tBYg$7oEucKHCoqo7G7Njt9FE4qJ4GPdqrq+qkB3vzgEoatU','2019-12-14 05:28:45',NULL,NULL,NULL,'2019-12-14 05:28:32',0,NULL,NULL,'a:1:{i:0;s:9:\"ROLE_USER\";}',NULL,NULL,'2019-12-14 05:27:59','2019-12-14 05:28:45','argon2i');
+
+/*!40000 ALTER TABLE `sylius_shop_user` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 # Dump of table sylius_tax_category
@@ -2122,7 +2211,7 @@ LOCK TABLES `sylius_tax_category` WRITE;
 
 INSERT INTO `sylius_tax_category` (`id`, `code`, `name`, `description`, `created_at`, `updated_at`)
 VALUES
-	(3,'FLORIDA_TAX','7% Florida Tax','7% Florida Tax','2019-11-28 00:17:55','2019-11-28 00:17:55');
+	(4,'FLORIDA_STATE_TAX','Florida State Tax','Florida has a 7% tax on the total amount of the purchase.','2019-12-14 05:35:55','2019-12-14 05:35:55');
 
 /*!40000 ALTER TABLE `sylius_tax_category` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -2157,7 +2246,7 @@ LOCK TABLES `sylius_tax_rate` WRITE;
 
 INSERT INTO `sylius_tax_rate` (`id`, `category_id`, `zone_id`, `code`, `name`, `amount`, `included_in_price`, `calculator`, `created_at`, `updated_at`)
 VALUES
-	(1,3,1,'FLORIDA_TAX','7% Florida Tax',0.07000,1,'default','2019-11-28 00:21:07','2019-11-28 00:21:07');
+	(3,4,4,'FL_STATE_TAX_RATE','Florida State Tax',0.07000,1,'default','2019-12-14 05:57:17','2019-12-14 14:43:03');
 
 /*!40000 ALTER TABLE `sylius_tax_rate` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -2294,7 +2383,8 @@ LOCK TABLES `sylius_zone` WRITE;
 
 INSERT INTO `sylius_zone` (`id`, `code`, `name`, `type`, `scope`)
 VALUES
-	(1,'US','United States of America','country','all');
+	(1,'US','United States of America','country','all'),
+	(4,'US-FL-ZONE','Florida','province','all');
 
 /*!40000 ALTER TABLE `sylius_zone` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -2320,7 +2410,8 @@ LOCK TABLES `sylius_zone_member` WRITE;
 
 INSERT INTO `sylius_zone_member` (`id`, `belongs_to`, `code`)
 VALUES
-	(1,1,'US');
+	(1,1,'US'),
+	(4,4,'US-FL');
 
 /*!40000 ALTER TABLE `sylius_zone_member` ENABLE KEYS */;
 UNLOCK TABLES;

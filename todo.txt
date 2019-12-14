@@ -41,3 +41,12 @@ yum search xvfb
 install the first item on the result
 -- or --
 https://gist.github.com/Jabolcnik/bfa28516879dd3d062d34f9d9cdf3011
+
+
+--- 
+# import new data 
+mysql -uroot -pZ3tam3ds@2019 -e "drop database zetameds_production"
+
+mysql -uroot -pZ3tam3ds@2019 -e "create database zetameds_production character set utf8 collate utf8_general_ci;"
+
+mysql -uroot -pZ3tam3ds@2019 zetameds_production < zetameds_dev_

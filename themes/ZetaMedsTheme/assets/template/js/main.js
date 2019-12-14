@@ -69,7 +69,7 @@ $(window).on('load', function() {
         margin: 0,
         nav: true,
         items: 1,
-        dots: true,
+        dots: false,
         animateOut: 'fadeOut',
     	animateIn: 'fadeIn',
         navText: ['<i class="flaticon-left-arrow-1"></i>', '<i class="flaticon-right-arrow-1"></i>'],

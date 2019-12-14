@@ -1,2 +1,6 @@
 brille24_tierprice_bundle:
     resource: '@Brille24SyliusTierPricePlugin/Resources/config/routing.yml'
+
+app.page.terms_and_conditions:
+    path: /en_US/terms-and-conditions
+    controller: App\Controller\PageController::termsAndConditions

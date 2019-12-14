@@ -155,3 +155,10 @@ label.required {
         font-size: 15px;
     }
 }
+
+.text-stroke {
+  color: #c0c0c0;
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #c0c0c0;
+}

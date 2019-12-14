@@ -39,4 +39,5 @@ https://jaimegris.wordpress.com/2015/03/04/how-to-install-wkhtmltopdf-in-centos-
 this depends on X Server
 yum search xvfb
 install the first item on the result
-
+-- or --
+https://gist.github.com/Jabolcnik/bfa28516879dd3d062d34f9d9cdf3011

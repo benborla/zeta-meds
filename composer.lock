@@ -102,12 +102,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/benborla/sylius-authorize-net.git",
-                "reference": "a6f37f5badc3ef842f6e390e86f22e5d922ab27a"
+                "reference": "bb5aba8ffe6189e13a94a2015b3a250edf3f6717"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/benborla/sylius-authorize-net/zipball/a6f37f5badc3ef842f6e390e86f22e5d922ab27a",
-                "reference": "a6f37f5badc3ef842f6e390e86f22e5d922ab27a",
+                "url": "https://api.github.com/repos/benborla/sylius-authorize-net/zipball/bb5aba8ffe6189e13a94a2015b3a250edf3f6717",
+                "reference": "bb5aba8ffe6189e13a94a2015b3a250edf3f6717",
                 "shasum": ""
             },
             "require": {
@@ -170,7 +170,7 @@
                 "plugin",
                 "sylius"
             ],
-            "time": "2019-12-08T14:30:14+00:00"
+            "time": "2019-12-12T07:55:08+00:00"
         },
         {
             "name": "brille24/sylius-tierprice-plugin",
@@ -4811,16 +4811,16 @@
         },
         {
             "name": "phpoption/phpoption",
-            "version": "1.6.0",
+            "version": "1.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmittjoh/php-option.git",
-                "reference": "f4e7a6a1382183412246f0d361078c29fb85089e"
+                "reference": "a8593bf5176bf3d3f2966942c530be19b44ec87c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/php-option/zipball/f4e7a6a1382183412246f0d361078c29fb85089e",
-                "reference": "f4e7a6a1382183412246f0d361078c29fb85089e",
+                "url": "https://api.github.com/repos/schmittjoh/php-option/zipball/a8593bf5176bf3d3f2966942c530be19b44ec87c",
+                "reference": "a8593bf5176bf3d3f2966942c530be19b44ec87c",
                 "shasum": ""
             },
             "require": {
@@ -4861,7 +4861,7 @@
                 "php",
                 "type"
             ],
-            "time": "2019-11-30T20:20:49+00:00"
+            "time": "2019-12-11T13:45:14+00:00"
         },
         {
             "name": "polishsymfonycommunity/symfony-mocker-container",
@@ -9588,26 +9588,26 @@
         },
         {
             "name": "symfony/stopwatch",
-            "version": "v5.0.1",
+            "version": "v4.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/stopwatch.git",
-                "reference": "d410282956706e0b08681a5527447a8e6b6f421e"
+                "reference": "5745b514fc56ae1907c6b8ed74f94f90f64694e9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/stopwatch/zipball/d410282956706e0b08681a5527447a8e6b6f421e",
-                "reference": "d410282956706e0b08681a5527447a8e6b6f421e",
+                "url": "https://api.github.com/repos/symfony/stopwatch/zipball/5745b514fc56ae1907c6b8ed74f94f90f64694e9",
+                "reference": "5745b514fc56ae1907c6b8ed74f94f90f64694e9",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.2.5",
+                "php": "^7.1.3",
                 "symfony/service-contracts": "^1.0|^2"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "5.0-dev"
+                    "dev-master": "4.4-dev"
                 }
             },
             "autoload": {
@@ -9634,7 +9634,7 @@
             ],
             "description": "Symfony Stopwatch Component",
             "homepage": "https://symfony.com",
-            "time": "2019-11-18T17:27:11+00:00"
+            "time": "2019-11-05T16:11:08+00:00"
         },
         {
             "name": "symfony/swiftmailer-bundle",
@@ -10996,24 +10996,27 @@
         },
         {
             "name": "zendframework/zend-code",
-            "version": "3.4.0",
+            "version": "3.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-code.git",
-                "reference": "46feaeecea14161734b56c1ace74f28cb329f194"
+                "reference": "268040548f92c2bfcba164421c1add2ba43abaaa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-code/zipball/46feaeecea14161734b56c1ace74f28cb329f194",
-                "reference": "46feaeecea14161734b56c1ace74f28cb329f194",
+                "url": "https://api.github.com/repos/zendframework/zend-code/zipball/268040548f92c2bfcba164421c1add2ba43abaaa",
+                "reference": "268040548f92c2bfcba164421c1add2ba43abaaa",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.1",
                 "zendframework/zend-eventmanager": "^2.6 || ^3.0"
             },
+            "conflict": {
+                "phpspec/prophecy": "<1.9.0"
+            },
             "require-dev": {
-                "doctrine/annotations": "^1.0",
+                "doctrine/annotations": "^1.7",
                 "ext-phar": "*",
                 "phpunit/phpunit": "^7.5.16 || ^8.4",
                 "zendframework/zend-coding-standard": "^1.0",
@@ -11027,7 +11030,8 @@
             "extra": {
                 "branch-alias": {
                     "dev-master": "3.4.x-dev",
-                    "dev-develop": "3.5.x-dev"
+                    "dev-develop": "3.5.x-dev",
+                    "dev-dev-4.0": "4.0.x-dev"
                 }
             },
             "autoload": {
@@ -11045,7 +11049,7 @@
                 "code",
                 "zf"
             ],
-            "time": "2019-10-05T23:18:22+00:00"
+            "time": "2019-12-10T19:21:15+00:00"
         },
         {
             "name": "zendframework/zend-eventmanager",
@@ -11699,16 +11703,16 @@
         },
         {
             "name": "composer/ca-bundle",
-            "version": "1.2.4",
+            "version": "1.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/ca-bundle.git",
-                "reference": "10bb96592168a0f8e8f6dcde3532d9fa50b0b527"
+                "reference": "62e8fc2dc550e5d6d8c9360c7721662670f58149"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/10bb96592168a0f8e8f6dcde3532d9fa50b0b527",
-                "reference": "10bb96592168a0f8e8f6dcde3532d9fa50b0b527",
+                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/62e8fc2dc550e5d6d8c9360c7721662670f58149",
+                "reference": "62e8fc2dc550e5d6d8c9360c7721662670f58149",
                 "shasum": ""
             },
             "require": {
@@ -11719,7 +11723,7 @@
             "require-dev": {
                 "phpunit/phpunit": "^4.8.35 || ^5.7 || 6.5 - 8",
                 "psr/log": "^1.0",
-                "symfony/process": "^2.5 || ^3.0 || ^4.0"
+                "symfony/process": "^2.5 || ^3.0 || ^4.0 || ^5.0"
             },
             "type": "library",
             "extra": {
@@ -11751,7 +11755,7 @@
                 "ssl",
                 "tls"
             ],
-            "time": "2019-08-30T08:44:50+00:00"
+            "time": "2019-12-11T14:44:42+00:00"
         },
         {
             "name": "composer/semver",
@@ -11995,16 +11999,16 @@
         },
         {
             "name": "friends-of-behat/symfony-extension",
-            "version": "v2.0.9",
+            "version": "v2.0.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfBehat/SymfonyExtension.git",
-                "reference": "96dfafd63e4bf989c22662d1adc69e8d8a3568c7"
+                "reference": "9c6c019c6d1c67208261bf183a3effa94357aff4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfBehat/SymfonyExtension/zipball/96dfafd63e4bf989c22662d1adc69e8d8a3568c7",
-                "reference": "96dfafd63e4bf989c22662d1adc69e8d8a3568c7",
+                "url": "https://api.github.com/repos/FriendsOfBehat/SymfonyExtension/zipball/9c6c019c6d1c67208261bf183a3effa94357aff4",
+                "reference": "9c6c019c6d1c67208261bf183a3effa94357aff4",
                 "shasum": ""
             },
             "require": {
@@ -12013,6 +12017,9 @@
                 "symfony/dependency-injection": "^3.4|^4.1",
                 "symfony/http-kernel": "^3.4|^4.1",
                 "symfony/proxy-manager-bridge": "^3.4|^4.1"
+            },
+            "conflict": {
+                "symfony/stopwatch": "^5.0"
             },
             "require-dev": {
                 "behat/mink": "^1.7",
@@ -12023,6 +12030,7 @@
                 "phpstan/phpstan-shim": "^0.11",
                 "sylius-labs/coding-standard": "^3.0",
                 "symfony/framework-bundle": "^3.4|^4.1",
+                "symfony/process": "^3.4|^4.1",
                 "symfony/yaml": "^3.4|^4.1"
             },
             "suggest": {
@@ -12051,7 +12059,7 @@
                 }
             ],
             "description": "Integrates Behat with Symfony.",
-            "time": "2019-10-10T16:00:08+00:00"
+            "time": "2019-12-09T12:08:52+00:00"
         },
         {
             "name": "friends-of-behat/variadic-extension",
@@ -14517,16 +14525,16 @@
         },
         {
             "name": "slam/php-cs-fixer-extensions",
-            "version": "v1.19.2",
+            "version": "v1.19.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Slamdunk/php-cs-fixer-extensions.git",
-                "reference": "9d54bd245a770c9731664629975711972115d626"
+                "reference": "47b56952b804b6285fe0a7e9edfc13df71cf7226"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Slamdunk/php-cs-fixer-extensions/zipball/9d54bd245a770c9731664629975711972115d626",
-                "reference": "9d54bd245a770c9731664629975711972115d626",
+                "url": "https://api.github.com/repos/Slamdunk/php-cs-fixer-extensions/zipball/47b56952b804b6285fe0a7e9edfc13df71cf7226",
+                "reference": "47b56952b804b6285fe0a7e9edfc13df71cf7226",
                 "shasum": ""
             },
             "require": {
@@ -14560,7 +14568,7 @@
                 }
             ],
             "description": "Slam extension of friendsofphp/php-cs-fixer",
-            "time": "2019-12-08T13:52:39+00:00"
+            "time": "2019-12-09T10:29:07+00:00"
         },
         {
             "name": "slevomat/coding-standard",

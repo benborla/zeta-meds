@@ -43,5 +43,6 @@ import './img/credit-card.png';
 import './img/home.png';
 import './img/clock.png';
 
-import './img/sliders/slider-1.png';
-import './img/sliders/slider-2.png';
+import './img/sliders/banner-1-min.jpg';
+import './img/sliders/banner-2-min.jpg';
+import './img/sliders/banner-3-min.jpg';

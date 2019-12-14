@@ -43,12 +43,14 @@ const SyliusAddToCart = (el) => {
       validationElement.classList.remove('d-none');
       let validationMessage = '';
 
-      Object.entries(error.response.data).forEach(([, message]) => {
-        validationMessage += message;
+      Object.entries(error.response.data).forEach(([, errorMessages]) => {
+        errorMessages.errors.forEach(message => {
+          validationMessage += `<li>${message}</li>`;
+        });
       });
 
       validationElement.innerHTML = validationMessage;
-      this.element.classList.remove('loading');
+      element.classList.remove('loading');
     });
   });
 };
@@ -109,6 +111,7 @@ buttons.forEach((button) => {
     }
 
     form.setAttribute('data-payload', JSON.stringify(payload));
+    form.classList.add('loading');
     document.querySelector('button#add_to_cart_final').click();
   });
 });

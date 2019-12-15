@@ -1,0 +1,26 @@
+{% extends '@SyliusShop/layout.html.twig' %}
+{% import '@SyliusShop/Common/Macro/headers.html.twig' as headers %}
+
+{% block content %}
+    <h1 class="h1">Frequently Asked Questions</h1>
+    <div id="accordion" class="mt-4">
+        {% for question in faq %}
+        <div class="card">
+            <div class="card-header" id="heading{{ loop.index }}">
+            <h5 class="mb-0">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#collapse{{ loop.index }}" aria-expanded="true" aria-controls="collapse{{ loop.index }}">
+                    {{ question.question}}
+                </button>
+            </h5>
+            </div>
+
+            <div id="collapse{{ loop.index }}" class="collapse" aria-labelledby="heading{{ loop.index }}" data-parent="#accordion">
+            <div class="card-body">
+                {{ question.answer }}
+            </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

@@ -72,4 +72,10 @@ class PageController extends AbstractController
         return new JsonResponse(['message' => 'Message has been sent!', 'errors' => []]);
     }
 
+    public function faq()
+    {
+        $faq = $this->getParameter('faq');
+        return $this->render('@SyliusShop/Page/faq.html.twig', ['faq' => $faq]);
+    }
+
 }

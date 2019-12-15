@@ -15,3 +15,8 @@ app.page.contact_us:
     path: /en_US/send-contact-request
     controller: App\Controller\PageController::contactUs
     methods: POST
+
+app.page.faq:
+    path: /en_US/faq
+    controller: App\Controller\PageController::faq
+    methods: GET

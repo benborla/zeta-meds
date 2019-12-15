@@ -1,4 +1,7 @@
 {% import '@SyliusShop/Common/Macro/messages.html.twig' as messages %}
+{% block title %}
+Login | Zeta Meds
+{% endblock %}
 
 {% if last_error %}
     {{ messages.error(last_error.messageKey|trans(last_error.messageData, 'security')) }}

@@ -4,3 +4,14 @@ brille24_tierprice_bundle:
 app.page.terms_and_conditions:
     path: /en_US/terms-and-conditions
     controller: App\Controller\PageController::termsAndConditions
+    methods: GET
+
+app.page.about_us:
+    path: /en_US/about-us
+    controller: App\Controller\PageController::aboutUs
+    methods: GET
+
+app.page.contact_us:
+    path: /en_US/send-contact-request
+    controller: App\Controller\PageController::contactUs
+    methods: POST

@@ -6,6 +6,8 @@
     {% autoescape %}
         Message from: {{ data.email }}
         <br/>
+        Name: {{ data.name }}
+        <br/>
         Content:
         <br/>
         "{{ data.message|nl2br }}"

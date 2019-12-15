@@ -24,6 +24,7 @@ import SyliusVariantImages from './sylius-variant-images';
 import SyliusProvinceField from './sylius-province-field';
 import SyliusAddressBook from './sylius-address-book';
 import SyliusLoadableForms from './sylius-loadable-forms';
+import SyliusContactUs from './contact-us';
 
 // template specific files
 import '../template/js/jquery.slicknav.min';
@@ -65,6 +66,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Variant prices
   SyliusVariantsPrices();
+
+  // Contact Us
+  SyliusContactUs()
 
   // Star rating
   document.querySelectorAll('[data-js-rating]').forEach((elem) => {

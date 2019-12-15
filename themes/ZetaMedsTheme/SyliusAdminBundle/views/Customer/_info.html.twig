@@ -20,14 +20,12 @@
         </div>
     {% endif %}
 
-    {% if customer.phoneNumber is not empty %}
-        <div class="extra content">
-        <span>
-            <i class="calendar icon"></i>
-            {{ customer.birthday|date('F d, Y') }}
-        </span>
-        </div>
-    {% endif %}
+    <div class="extra content">
+    <span>
+        <i class="calendar icon"></i>
+        {{ customer.birthday|date('F d, Y') }}
+    </span>
+    </div>
 
     {% if order.customerIp is defined and order.customerIp is not empty %}
         <div class="extra content" id="ipAddress">

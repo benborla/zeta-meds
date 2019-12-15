@@ -2,10 +2,10 @@
   "entrypoints": {
     "app": {
       "css": [
-        "/zetameds-theme/app.css"
+        "http://localhost:8080/zetameds-theme/app.css"
       ],
       "js": [
-        "/zetameds-theme/app.js"
+        "http://localhost:8080/zetameds-theme/app.js"
       ]
     }
   }

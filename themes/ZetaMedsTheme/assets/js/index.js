@@ -68,12 +68,16 @@ document.addEventListener('DOMContentLoaded', () => {
   SyliusVariantsPrices();
 
   // Contact Us
-  SyliusContactUs()
+  const contactForm = document.querySelectorAll('[name=sylius_contact]');
+  if (contactForm.length > 0) {
+    SyliusContactUs();
+  }
 
   // Star rating
   document.querySelectorAll('[data-js-rating]').forEach((elem) => {
     new SyliusRating(elem, {
       onRate(value) {
+        console.log(value);
         document.querySelector(`#sylius_product_review_rating_${value - 1}`).checked = true;
       },
     });

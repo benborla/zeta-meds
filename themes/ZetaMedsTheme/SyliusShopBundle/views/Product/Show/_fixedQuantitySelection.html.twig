@@ -17,7 +17,8 @@
                     </div>
                     <span class="text-white mt-1">
                         {% if (remainingStock > 0) %}
-                            {{ product.name }} {{ variant.name }} (Remaining: {{ remainingStock|number_format }} tablet(s))
+                            {% set tabletText = remainingStock > 1 ? 'tablets' : 'tablet' %}
+                            {{ product.name }} {{ variant.name }} (Remaining: {{ remainingStock|number_format }} {{ tabletText }})
                         {% else %}
                             {{ product.name }} {{ variant.name }} (Out of stock)
                         {% endif %}

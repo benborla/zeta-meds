@@ -30,7 +30,7 @@ import './img/product/10.jpg';
 import './img/product/11.jpg';
 import './img/product/12.jpg';
 
-import './img/logo-light.png';
+// import './img/logo-light.png';
 import './img/cards.png';
 import './img/bg.jpg';
 import './img/bg-2.jpg';

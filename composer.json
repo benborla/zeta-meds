@@ -104,6 +104,10 @@
         ],
         "install-bundle-assets": [
             "php bin/console sylius:theme:assets:install"
+        ],
+        "replace-admin-assets": [
+            "cp public/assets/admin/img/zetameds-logo.png public/assets/admin/img/logo.png",
+            "cp public/assets/admin/img/zetameds-admin-logo.svg public/assets/admin/img/admin-logo.svg"
         ]
     },
     "config": {

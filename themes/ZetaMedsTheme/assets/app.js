@@ -46,3 +46,7 @@ import './img/clock.png';
 import './img/sliders/banner-1-min.jpg';
 import './img/sliders/banner-2-min.jpg';
 import './img/sliders/banner-3-min.jpg';
+
+// require jQuery to be loaded
+const $ = require('jquery');
+global.$ = global.jQuery = $;

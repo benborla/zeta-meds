@@ -97,4 +97,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Loadable forms
   SyliusLoadableForms();
+
+  // Checkout Payment
+  document.querySelector('form[name=sylius_checkout_select_payment]').addEventListener('submit', (e) => {
+    const paymentMethod = document.querySelectorAll('[data-paymentmethod]');
+    [...paymentMethod].map((option) => {
+      if (option.checked && option.value === 'PAY_VIA_INSURANCE') {
+        alert('show insurance form here');
+      }
+    })
+    e.preventDefault();
+  });
 });

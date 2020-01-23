@@ -13,10 +13,10 @@ const SyliusLoadableForms = function SyliusLoadableForms() {
   const overlay = document.querySelector('[data-js-loading-overlay]');
 
   document.querySelectorAll('form.loadable').forEach((form) => {
-    form.appendChild(overlay);
-    form.addEventListener('submit', () => {
-      form.classList.add('loading');
-    });
+      // form.appendChild(overlay);
+      form.addEventListener('submit', () => {
+        form.classList.add('loading');
+      });
   });
 };
 

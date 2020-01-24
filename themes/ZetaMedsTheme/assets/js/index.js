@@ -104,30 +104,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  const radioPaymentOptions = document.querySelectorAll('[data-paymentmethod]');
-  [].slice.call(radioPaymentOptions).forEach((option, idx) => {
-    option.addEventListener('change', () => {
-      insuranceFormEvent(option, () => {
+  document.querySelectorAll('[data-paymentmethod]').forEach((option) => {
+    option.addEventListener('click', (e) => {
+      insuranceFormEvent(e.srcElement, () => {
         console.log('show insurance form');
-      })
+      });
     });
   });
 
-  // [document.querySelectorAll('[data-paymentmethod]')].forEach((radio) => {
-  //   radio.addEventListener('click', (e) => {
-  //     console.log(e);
-  //   });
-  // });
+  if (document.querySelector('[data-paymentmethod]')) {
+    document.querySelector('[data-paymentmethod]:checked').click();
+  }
+
 
   // Checkout Payment
   const paymentOptionForm = document.querySelector('form[name=sylius_checkout_select_payment]');
   if (paymentOptionForm) {
     paymentOptionForm.addEventListener('submit', (e) => {
-      const paymentMethod = document.querySelectorAll('[data-paymentmethod]');
-      [...paymentMethod].map((option) => {
+      const paymentMethod = document.querySelectorAll('[data-paymentmethod]').forEach((option) => {
         insuranceFormEvent(option, () => {
           console.log('submit insurance form');
-        })
+        });
       });
     });
   }

@@ -98,14 +98,37 @@ document.addEventListener('DOMContentLoaded', () => {
   // Loadable forms
   SyliusLoadableForms();
 
-  // Checkout Payment
-  document.querySelector('form[name=sylius_checkout_select_payment]').addEventListener('submit', (e) => {
-    const paymentMethod = document.querySelectorAll('[data-paymentmethod]');
-    [...paymentMethod].map((option) => {
-      if (option.checked && option.value === 'PAY_VIA_INSURANCE') {
-        alert('show insurance form here');
-      }
-    })
-    e.preventDefault();
+  function insuranceFormEvent(option, fn) {
+    if (option.checked && option.value === 'PAY_VIA_INSURANCE') {
+      fn();
+    }
+  }
+
+  const radioPaymentOptions = document.querySelectorAll('[data-paymentmethod]');
+  [].slice.call(radioPaymentOptions).forEach((option, idx) => {
+    option.addEventListener('change', () => {
+      insuranceFormEvent(option, () => {
+        console.log('show insurance form');
+      })
+    });
   });
+
+  // [document.querySelectorAll('[data-paymentmethod]')].forEach((radio) => {
+  //   radio.addEventListener('click', (e) => {
+  //     console.log(e);
+  //   });
+  // });
+
+  // Checkout Payment
+  const paymentOptionForm = document.querySelector('form[name=sylius_checkout_select_payment]');
+  if (paymentOptionForm) {
+    paymentOptionForm.addEventListener('submit', (e) => {
+      const paymentMethod = document.querySelectorAll('[data-paymentmethod]');
+      [...paymentMethod].map((option) => {
+        insuranceFormEvent(option, () => {
+          console.log('submit insurance form');
+        })
+      });
+    });
+  }
 });

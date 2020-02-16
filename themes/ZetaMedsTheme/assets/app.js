@@ -9,6 +9,7 @@ import './media/sylius-logo.png';
 
 // Font awesome icons
 import './js/fontawesome';
+import './js/bootstrap.min'
 
 // images
 import './img/logo.png';

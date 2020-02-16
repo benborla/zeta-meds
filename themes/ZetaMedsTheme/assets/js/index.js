@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('[data-paymentmethod]').forEach((option) => {
     option.addEventListener('click', (e) => {
       insuranceFormEvent(e.srcElement, () => {
-        console.log('show insurance form');
+        $('#insurance-modal').modal('show');
       });
     });
   });

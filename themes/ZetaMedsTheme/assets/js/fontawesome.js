@@ -22,6 +22,7 @@ import { faPencilAlt } from '@fortawesome/free-solid-svg-icons/faPencilAlt';
 import { faSyncAlt } from '@fortawesome/free-solid-svg-icons/faSyncAlt';
 import { faEdit } from '@fortawesome/free-solid-svg-icons/faEdit';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons/faChevronDown';
+import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons/faQuestionCircle';
 
 library.add(
   faStar,
@@ -44,5 +45,6 @@ library.add(
   faSyncAlt,
   faEdit,
   faChevronDown,
+  faQuestionCircle,
 );
 dom.watch();

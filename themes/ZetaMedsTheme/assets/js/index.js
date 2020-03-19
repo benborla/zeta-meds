@@ -34,6 +34,8 @@ import '../template/js/jquery.zoom.min';
 import '../template/js/jquery-ui.min';
 import '../template/js/main';
 
+import './insurance-actions';
+
 // Global axios settings
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=utf-8';
 axios.defaults.headers.post.accept = 'application/json, text/javascript, */*; q=0.01';
@@ -97,35 +99,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Loadable forms
   SyliusLoadableForms();
-
-  function insuranceFormEvent(option, fn) {
-    if (option.checked && option.value === 'PAY_VIA_INSURANCE') {
-      fn();
-    }
-  }
-
-  document.querySelectorAll('[data-paymentmethod]').forEach((option) => {
-    option.addEventListener('click', (e) => {
-      insuranceFormEvent(e.srcElement, () => {
-        $('#insurance-modal').modal('show');
-      });
-    });
-  });
-
-  if (document.querySelector('[data-paymentmethod]')) {
-    document.querySelector('[data-paymentmethod]:checked').click();
-  }
-
-
-  // Checkout Payment
-  const paymentOptionForm = document.querySelector('form[name=sylius_checkout_select_payment]');
-  if (paymentOptionForm) {
-    paymentOptionForm.addEventListener('submit', (e) => {
-      const paymentMethod = document.querySelectorAll('[data-paymentmethod]').forEach((option) => {
-        insuranceFormEvent(option, () => {
-          console.log('submit insurance form');
-        });
-      });
-    });
-  }
 });

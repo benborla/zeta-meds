@@ -27,7 +27,13 @@
 
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                 <div class="card-body">
+                    <div id="health-info-container">
                     {% include '@SyliusShop/Checkout/SelectPayment/partials/_health_info.html.twig' %}
+                    </div>
+                    <div class="float-right">
+                        <button type="button" class="btn btn-danger btn-xs" id="add-health-info" data-count="1"><i class="fa fa-plus"></i> Add</a>
+                    </div>
+                    <div class="clearfix"></div>
                 </div>
             </div>
         </div>
@@ -44,7 +50,9 @@
 
         <div id="collapse-doctors-info" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
             <div class="card-body">
+                <div class="doctor-info-container">
                 {% include '@SyliusShop/Checkout/SelectPayment/partials/_doctors_info.html.twig' %}
+                </div>
                 <div class="float-right">
                     <button type="button" class="btn btn-danger btn-xs">Add</button>
                 </div>

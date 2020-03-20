@@ -1,7 +1,6 @@
-<div class="health-insurance-info" data-count="1">
-
+<div class="health-insurance-info" data-count="{{ count|default('1') }}">
     <div class="form-group">
-        <label class="control-label" for="birthdate">Health Insurance Information</label>
+        <label class="control-label" for="birthdate"><span class="hii-count">{{ count|default('1') }}.</span> Health Insurance Information</label>
         <textarea id="health-insurance-info" name="health-insurance-info" type="date" class="form-control input-md"></textarea>
     </div>
 
@@ -35,6 +34,5 @@
         <input id="name" name="name" type="text" placeholder="Name" class="form-control input-md" required="">
     </div>
 
-    <hr/>
-
+    <hr />
 </div>

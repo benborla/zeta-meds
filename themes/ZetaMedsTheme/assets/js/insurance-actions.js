@@ -1,3 +1,20 @@
+import axios from 'axios';
+
+document.getElementById('add-health-info').addEventListener('click', function () {
+  let container = $('#health-info-container');
+  let button = this;
+  let count = button.dataset.count;
+  count++;
+  this.dataset.count = count;
+  let url = '/en_US/add-health-info/' + count;
+
+    axios.get(url)
+      .then((response) => {
+        const dom = response.data.dom;
+        container.append(dom);
+      });
+});
+
 $(function () {
   $('[data-toggle="popover"]').popover()
 

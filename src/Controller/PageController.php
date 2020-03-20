@@ -78,4 +78,21 @@ class PageController extends AbstractController
         return $this->render('@SyliusShop/Page/faq.html.twig', ['faq' => $faq]);
     }
 
+    public function addHealthInfo(int $count)
+    {
+        $view =  $this->renderView(
+            '@SyliusShop/Checkout/SelectPayment/partials/_health_info.html.twig',
+            ['count' => $count]
+        );
+        $count++;
+
+        return new JsonResponse([
+            'dom' => $view,
+            'count' => $count
+        ]);
+
+
+
+    }
+
 }

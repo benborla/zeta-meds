@@ -20,3 +20,8 @@ app.page.faq:
     path: /en_US/faq
     controller: App\Controller\PageController::faq
     methods: GET
+
+app.page.add_health_inf:
+    path: /en_US/add-health-info/{count}
+    controller: App\Controller\PageController::addHealthInfo
+    methods: GET
